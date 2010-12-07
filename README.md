@@ -1,6 +1,8 @@
 # CRC for node.js
 
-This is a basic port/copy of the JavaScript CRC implementation. The module is compatible with RequireJS.
+This is a basic port/copy of the JavaScript CRC implementation. The module is compatible with Node.js and Require.js.
+
+This is an almost direct copy from http://www.digsys.se/JavaScript/CRC.aspx 
 
 ## Functions
 
