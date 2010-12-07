@@ -1,6 +1,6 @@
 {
 	"name" : "node-crc",
-	"version" : "0.1",
+	"version" : "0.1.0",
 	"description" : "CRC JavaScript implementation",
 	"author": "Alex Gorbatchev <alex.gorbatchev@gmail.com>",
 	"contributors": [],
