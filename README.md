@@ -1,6 +1,10 @@
 # CRC for node.js
 
-This is a basic port/copy of the JavaScript CRC implementation. The following functions are exported:
+This is a basic port/copy of the JavaScript CRC implementation.
+
+## Functions
+
+The following functions are exported:
 
     crc8(String)	#=> Number
     crcArc(String)	#=> Number
@@ -10,3 +14,7 @@ This is a basic port/copy of the JavaScript CRC implementation. The following fu
     hex8(Number)	#=> String
     hex16(Number)	#=> String
     hex32(Number)	#=> String
+
+## Installation
+
+    npm install crc
