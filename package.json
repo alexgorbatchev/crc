@@ -1,0 +1,14 @@
+{
+	"name" : "node-crc",
+	"version" : "0.1",
+	"description" : "CRC JavaScript implementation",
+	"author": "Alex Gorbatchev <alex.gorbatchev@gmail.com>",
+	"contributors": [],
+	"main": "./lib/crc.js",
+	"scripts": {},
+	"directories" : {},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/alexgorbatchev/node-crc.git"
+	}
+}
