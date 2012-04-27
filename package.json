@@ -7,6 +7,10 @@
 	"main": "./lib/crc.js",
 	"scripts": {},
 	"directories" : {},
+	"devDependencies": {
+	  "mocha": "*",
+	  "should": "*"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/alexgorbatchev/node-crc.git"
