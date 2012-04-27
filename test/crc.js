@@ -6,17 +6,29 @@ describe('crc8()', function(){
   it('should work with strings', function(){
     crc.crc8('hello world').should.equal(64);
   })
+
+  it('should work with Buffers', function(){
+    crc.buffer.crc8(new Buffer('hello world')).should.equal(64);
+  })
 })
 
 describe('crc16()', function(){
   it('should work with strings', function(){
     crc.crc16('hello world').should.equal(15332);
   })
+
+  it('should work with Buffers', function(){
+    crc.buffer.crc16(new Buffer('hello world')).should.equal(15332);
+  })
 })
 
 describe('crc32()', function(){
   it('should work with strings', function(){
     crc.crc32('hello world').should.equal(222957957);
+  })
+
+  it('should work with Buffers', function(){
+    crc.buffer.crc32(new Buffer('hello world')).should.equal(222957957);
   })
 })
 
