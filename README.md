@@ -25,3 +25,7 @@ or
 
     npm install crc
 
+## Running tests
+
+    $ npm install
+    $ make test
