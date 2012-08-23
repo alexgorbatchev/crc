@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/alexgorbatchev/node-crc.png)](http://travis-ci.org/alexgorbatchev/node-crc)
 # JavaScript CRC 8, 16 and 32.
 
 This is a basic port/copy of the JavaScript CRC implementation. The module works with any CommonJS system supporting `module.exports` notation as well as in the browser. When loaded in the browser, all functions end up under the `window.crc` "namespace".
