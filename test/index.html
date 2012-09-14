@@ -1,0 +1,18 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Child Browser Demo</h1>
+
+        <a onClick="launchBrowser()" href="#">What does it do?</a>
+
+    </body>
+    <script src="phonegap.js"></script>
+    <script src="childbrowser.js"></script>
+    <script>
+        var url = 'http://www.youtube.com/watch?v=R4vpXS5BKyc'
+        function launchBrowser() {
+            window.plugins.childBrowser.showWebPage(url,
+            { showLocationBar: true });
+        }
+    </script>
+</html>
