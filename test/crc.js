@@ -77,3 +77,12 @@ describe('hex32()', function(){
     crc.hex32(222957957).should.equal('0D4A1185');
   })
 })
+
+describe('crc16CCITT()', function(){
+  it('should work with strings', function(){
+    crc.crc16CCITT('hello world').should.equal(61419);
+  })
+  it('should work with buffers', function(){
+    crc.buffer.crc16CCITT(new Buffer('hello world')).should.equal(61419);
+  })
+})
