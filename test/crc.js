@@ -1,6 +1,8 @@
 #!/usr/bin/env ./nodeunit/bin/nodeunit
 
-var crc = require('../lib/crc');
+var crc = require('../lib/crc'),
+    fs = require('fs'),
+    format = require('util').format;
 
 describe('crc8()', function(){
   it('should work with strings', function(){
@@ -27,9 +29,23 @@ describe('crc32()', function(){
     crc.crc32('hello world').should.equal(222957957);
   })
 
+  it('should work with bigger strings', function(){
+    var path = format("%s/index.html", __dirname),
+        fileContents = fs.readFileSync(path, 'utf-8');
+
+    crc.crc32(fileContents).should.equal(3026001449);
+  });
+
   it('should work with Buffers', function(){
     crc.buffer.crc32(new Buffer('hello world')).should.equal(222957957);
   })
+
+  it('should work with bigger Buffers', function(){
+    var path = format("%s/index.html", __dirname),
+        fileContents = fs.readFileSync(path);
+
+    crc.buffer.crc32(fileContents).should.equal(3026001449);
+  });
 })
 
 describe('crcArc()', function(){
