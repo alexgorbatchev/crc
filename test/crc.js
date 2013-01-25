@@ -86,3 +86,18 @@ describe('crc16CCITT()', function(){
     crc.buffer.crc16CCITT(new Buffer('hello world')).should.equal(61419);
   })
 })
+
+describe('crcModbusString()', function(){
+  it('should work with strings', function(){
+    crc.crcModbusString('hello world').should.equal(56775);
+  })
+})
+
+describe('crcModbusHex()', function(){
+  it('should work with hex', function(){
+    crc.crcModbusHex('hello world').should.equal(58374);
+  })
+})
+
+
+
