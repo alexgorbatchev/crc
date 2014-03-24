@@ -1,9 +1,13 @@
 {
 	"name" : "crc",
+<<<<<<< HEAD
 	"version" : "0.2.1",
+=======
+	"version" : "0.3.0",
+>>>>>>> refs/remotes/dwakus/master
 	"description" : "CRC JavaScript implementation",
 	"author": "Alex Gorbatchev <alex.gorbatchev@gmail.com>",
-	"contributors": [],
+	"contributors": ["Dean Kusler <deankus@gmail.com>"],
 	"main": "./lib/crc.js",
 	"scripts": {},
 	"directories" : {},

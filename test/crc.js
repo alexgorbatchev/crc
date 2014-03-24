@@ -12,6 +12,15 @@ describe('crc8()', function(){
   it('should work with Buffers', function(){
     crc.buffer.crc8(new Buffer('hello world')).should.equal(64);
   })
+
+  it('should work with Streams', function(done){
+    var stream = fs.createReadStream('./test/hello_world.txt');
+    crc.stream.crc8(stream, function(err, val) {
+      if (err) throw err;
+      val.should.equal(64);
+      done();
+    });
+  })
 })
 
 describe('crc16()', function(){
@@ -21,6 +30,15 @@ describe('crc16()', function(){
 
   it('should work with Buffers', function(){
     crc.buffer.crc16(new Buffer('hello world')).should.equal(15332);
+  })
+
+  it('should work with Streams', function(done){
+    var stream = fs.createReadStream('./test/hello_world.txt');
+    crc.stream.crc16(stream, function(err, val) {
+      if (err) throw err;
+      val.should.equal(15332);
+      done();
+    });
   })
 })
 
@@ -46,6 +64,15 @@ describe('crc32()', function(){
 
     crc.buffer.crc32(fileContents).should.equal(3026001449);
   });
+
+  it('should work with Streams', function(done){
+    var stream = fs.createReadStream('./test/hello_world.txt');
+    crc.stream.crc32(stream, function(err, val) {
+      if (err) throw err;
+      val.should.equal(222957957);
+      done();
+    });
+  })
 })
 
 describe('crcArc()', function(){
