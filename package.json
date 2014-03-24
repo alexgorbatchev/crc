@@ -6,7 +6,9 @@
 	"author": "Alex Gorbatchev <alex.gorbatchev@gmail.com>",
 	"contributors": ["Dean Kusler <deankus@gmail.com>"],
 	"main": "./lib/crc.js",
-	"scripts": {},
+	"scripts": {
+		"test": "./node_modules/.bin/mocha --require should --reporter spec"
+	},
 	"directories" : {},
 	"devDependencies": {
 	  "mocha": "*",
