@@ -1,20 +1,27 @@
 {
-	"name" : "crc",
-	"version" : "0.3.0",
-	"description" : "CRC JavaScript implementation",
-	"author": "Alex Gorbatchev <alex.gorbatchev@gmail.com>",
-	"contributors": ["Dean Kusler <deankus@gmail.com>"],
-	"main": "./lib/crc.js",
-	"scripts": {
-		"test": "./node_modules/.bin/mocha --require should --reporter spec"
-	},
-	"directories" : {},
-	"devDependencies": {
-	  "mocha": "*",
-	  "should": "*"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/alexgorbatchev/node-crc.git"
-	}
+  "name": "crc",
+  "version": "0.3.0",
+  "description": "CRC JavaScript implementation",
+  "author": "Alex Gorbatchev <alex.gorbatchev@gmail.com>",
+  "contributors": [
+    "Dean Kusler <deankus@gmail.com>"
+  ],
+  "main": "./lib/crc.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test/*.spec.coffee",
+    "pretest": "./node_modules/.bin/coffee --bare --output ./lib --compile ./src/*.coffee"
+  },
+  "directories": {},
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "coffee-script": "~1.7.1",
+    "coffee-errors": "~0.8.6",
+    "chai": "~1.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alexgorbatchev/node-crc.git"
+  },
+  "dependencies": {}
 }
