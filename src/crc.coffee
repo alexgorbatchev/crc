@@ -29,14 +29,6 @@ module.exports = class CRC
     @crc = @INIT_CRC
 
   #
-  # The input block length.
-  #
-  # @return [1]
-  #
-  block_length: ->
-    1
-
-  #
   # The length of the digest.
   #
   # @return [Integer]
