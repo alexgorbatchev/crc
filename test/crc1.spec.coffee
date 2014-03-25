@@ -2,6 +2,6 @@ require './test_helpers'
 
 describe 'CRC1', ->
   example
-    crc: require('../src/crc1').CRC1
+    crc: require('../src').CRC1
     string: '1234567890'
     expected: '0d'

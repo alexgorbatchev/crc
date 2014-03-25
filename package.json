@@ -3,10 +3,7 @@
   "version": "0.3.0",
   "description": "CRC JavaScript implementation",
   "author": "Alex Gorbatchev <alex.gorbatchev@gmail.com>",
-  "contributors": [
-    "Dean Kusler <deankus@gmail.com>"
-  ],
-  "main": "./lib/crc.js",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha test/*.spec.coffee",
     "pretest": "./node_modules/.bin/coffee --bare --output ./lib --compile ./src/*.coffee"
