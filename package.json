@@ -1,8 +1,10 @@
 {
   "name": "crc",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "CRC JavaScript implementation",
-  "keywords": ["crc"],
+  "keywords": [
+    "crc"
+  ],
   "main": "./lib/index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha test/*.spec.coffee",
