@@ -60,9 +60,9 @@ Directly access the checksum:
     crc32.checksum()
     # => 165789842
 
-## Older Version
+## Upgrading
 
-For older version please, `npm install crc@0.3.0`. In `1.0.0` these methods are mostly depricated.
+Older version `0.3.0` was unfortunately ported from a not so reliable source and results were not matching other libraries. If you are using 3.x please continue using it.
 
     crc8(String)             #=> Number
     crcArc(String)           #=> Number
