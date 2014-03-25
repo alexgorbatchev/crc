@@ -60,6 +60,22 @@ Directly access the checksum:
     crc32.checksum()
     # => 165789842
 
+## Older Version
+
+For older version please, `npm install crc@0.3.0`. In `1.0.0` these methods are mostly depricated.
+
+    crc8(String)             #=> Number
+    crcArc(String)           #=> Number
+    crcModbusString(string)  #=> Number
+    crcModbusHex(Number)     #=> Number
+    crc16(String)            #=> Number
+    crc16CCITT(String)       #=> Number
+    fcs16(String)            #=> Number
+    crc32(String)            #=> Number
+    hex8(Number)             #=> String
+    hex16(Number)            #=> String
+    hex32(Number)            #=> String
+
 ## Thanks
 
 This module is a direct port from Ruby's [Digest CRC](https://github.com/postmodern/digest-crc)
