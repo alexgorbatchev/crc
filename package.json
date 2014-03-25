@@ -2,13 +2,16 @@
   "name": "crc",
   "version": "0.3.0",
   "description": "CRC JavaScript implementation",
-  "author": "Alex Gorbatchev <alex.gorbatchev@gmail.com>",
+  "keywords": ["crc"],
   "main": "./lib/index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha test/*.spec.coffee",
     "pretest": "./node_modules/.bin/coffee --bare --output ./lib --compile ./src/*.coffee"
   },
-  "directories": {},
+  "author": {
+    "name": "Alex Gorbatchev",
+    "url": "https://github.com/alexgorbatchev"
+  },
   "devDependencies": {
     "mocha": "*",
     "should": "*",
@@ -16,9 +19,11 @@
     "coffee-errors": "~0.8.6",
     "chai": "~1.9.1"
   },
+  "homepage": "https://github.com/alexgorbatchev/node-crc",
+  "bugs": "https://github.com/alexgorbatchev/node-crc/issues",
   "repository": {
     "type": "git",
     "url": "git://github.com/alexgorbatchev/node-crc.git"
   },
-  "dependencies": {}
+  "license": "MIT"
 }
