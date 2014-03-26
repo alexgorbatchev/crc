@@ -30,7 +30,7 @@ Module for calculating Cyclic Redundancy Check (CRC).
 ## Running tests
 
     $ npm install
-    $ make test
+    $ npm test
 
 ## Usage Example
 
