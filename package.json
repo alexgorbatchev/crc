@@ -7,8 +7,8 @@
   ],
   "main": "./lib/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha test/*.spec.coffee",
-    "pretest": "./node_modules/.bin/coffee --bare --output ./lib --compile ./src/*.coffee"
+    "test": "mocha test/*.spec.coffee",
+    "pretest": "coffee --bare --output ./lib --compile ./src/*.coffee"
   },
   "author": {
     "name": "Alex Gorbatchev",
