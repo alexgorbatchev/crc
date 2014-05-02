@@ -1,9 +1,9 @@
 # crc
 
-[![NPM version](https://badge.fury.io/js/crc.png)](http://badge.fury.io/js/crc)
-[![Dependency status](https://david-dm.org/alexgorbatchev/node-crc.png)](https://david-dm.org/alexgorbatchev/node-crc)
-[![devDependency Status](https://david-dm.org/alexgorbatchev/node-crc/dev-status.png)](https://david-dm.org/alexgorbatchev/node-crc#info=devDependencies)
-[![Build Status](https://secure.travis-ci.org/alexgorbatchev/node-crc.png?branch=master)](https://travis-ci.org/alexgorbatchev/node-crc)
+[![NPM version](https://badge.fury.io/js/crc.svg)](http://badge.fury.io/js/crc)
+[![Dependency status](https://david-dm.org/alexgorbatchev/node-crc.svg)](https://david-dm.org/alexgorbatchev/node-crc)
+[![devDependency Status](https://david-dm.org/alexgorbatchev/node-crc/dev-status.svg)](https://david-dm.org/alexgorbatchev/node-crc#info=devDependencies)
+[![Build Status](https://api.travis-ci.org/alexgorbatchev/node-crc.svg?branch=master)](https://travis-ci.org/alexgorbatchev/node-crc)
 
 [![NPM](https://nodei.co/npm/crc.png?downloads=true)](https://npmjs.org/package/crc)
 
