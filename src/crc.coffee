@@ -19,9 +19,10 @@ module.exports = class CRC
   pack: (crc) ->
     ''
 
-  each_byte: (str, cb) ->
-    for char in str
-      cb if typeof char == 'string' then char.charCodeAt 0 else char 
+  each_byte: (buf, cb) ->
+    if typeof buf == 'string'
+      buf = new Buffer buf
+    cb byte for byte in buf
 
   #
   # Initializes the CRC checksum.
