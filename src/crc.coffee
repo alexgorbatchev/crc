@@ -20,7 +20,8 @@ module.exports = class CRC
     ''
 
   each_byte: (str, cb) ->
-    cb char.charCodeAt 0 for char in str
+    for char in str
+      cb if typeof char == 'string' then char.charCodeAt 0 else char 
 
   #
   # Initializes the CRC checksum.
