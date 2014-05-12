@@ -84,7 +84,7 @@ module.exports.CRC32 = class extends CRC
   #   The packed checksum.
   #
   pack: (crc) ->
-    hex((crc & 0xff000000) >> 24) + hex((crc & 0xff0000) >> 16) + hex((crc & 0xff00) >> 8) + hex(crc & 0xff)
+    hex(crc >> 24 & 0xff) + hex(crc >> 16 & 0xff) + hex(crc >> 8 & 0xff) + hex(crc & 0xff)
 
   #
   # Updates the CRC32 checksum.
