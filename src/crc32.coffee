@@ -94,6 +94,6 @@ module.exports.CRC32 = class extends CRC
   #
   update: (data) ->
     @each_byte data, (b) =>
-      @crc = (((@crc >> 8) & 0x00ffffff) ^ @TABLE[(@crc ^ b) & 0xff])
+      @crc = @TABLE[(@crc ^ b) & 0xff] ^ (@crc >>> 8)
 
     @
