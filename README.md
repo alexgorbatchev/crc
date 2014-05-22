@@ -4,8 +4,9 @@
 [![Dependency status](https://david-dm.org/alexgorbatchev/node-crc.svg)](https://david-dm.org/alexgorbatchev/node-crc)
 [![devDependency Status](https://david-dm.org/alexgorbatchev/node-crc/dev-status.svg)](https://david-dm.org/alexgorbatchev/node-crc#info=devDependencies)
 [![Build Status](https://api.travis-ci.org/alexgorbatchev/node-crc.svg?branch=master)](https://travis-ci.org/alexgorbatchev/node-crc)
+[![GitTip](http://img.shields.io/gittip/alexgorbatchev.svg)](https://www.gittip.com/alexgorbatchev/)
 
-[![NPM](https://nodei.co/npm/crc.png?downloads=true)](https://npmjs.org/package/crc)
+[![NPM](https://nodei.co/npm/crc.svg)](https://npmjs.org/package/crc)
 
 Module for calculating Cyclic Redundancy Check (CRC).
 
