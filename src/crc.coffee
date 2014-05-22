@@ -60,8 +60,10 @@ module.exports = class CRC
   # @return [Integer]
   #   The resulting CRC checksum.
   #
-  checksum: ->
-    @crc ^ @XOR_MASK
+  checksum: (signed = yes) ->
+    sum = @crc ^ @XOR_MASK
+    sum = sum >>> 0 if signed
+    sum
 
   #
   # Finishes the CRC checksum calculation.
