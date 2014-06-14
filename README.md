@@ -44,7 +44,7 @@ Calculate a CRC32:
 
 Calculate a CRC32 of a file:
 
-    crc.crc32(fs.readFileAsync('README.md', 'utf8'));
+    crc.crc32(fs.readFileSync('README.md', 'utf8'));
     # => "127ad531"
 
 Or using a `Buffer`:
