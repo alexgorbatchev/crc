@@ -13,8 +13,6 @@ getBuffer = (size) ->
 
 global.crc = require '../src'
 global.bufferCRC32 = require 'buffer-crc32'
-global.string100 = getBuffer(100).toString()
-global.string1kb = getBuffer(1024).toString()
 
 suite = new benchmark.Suite
 
