@@ -1,7 +1,7 @@
 {
   "name": "crc",
   "version": "2.1.1",
-  "description": "CRC JavaScript implementation",
+  "description": "Various CRC JavaScript implementations",
   "keywords": [
     "crc"
   ],
@@ -15,11 +15,14 @@
     "url": "https://github.com/alexgorbatchev"
   },
   "devDependencies": {
-    "mocha": "*",
-    "should": "*",
-    "coffee-script": "~1.7.1",
+    "beautify-benchmark": "^0.2.4",
+    "benchmark": "^1.0.0",
+    "buffer-crc32": "^0.2.3",
+    "chai": "~1.9.1",
     "coffee-errors": "~0.8.6",
-    "chai": "~1.9.1"
+    "coffee-script": "~1.7.1",
+    "mocha": "*",
+    "seedrandom": "^2.3.6"
   },
   "homepage": "https://github.com/alexgorbatchev/node-crc",
   "bugs": "https://github.com/alexgorbatchev/node-crc/issues",
