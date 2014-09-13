@@ -1,27 +1,12 @@
-CRC = require './crc'
-hex = require './hex'
+{Buffer} = require 'buffer'
+create = require './create'
 
-module.exports.CRC1 = class extends CRC
-  TABLE: []
-  CRC_MASK: 0x00
+module.exports = create (buf, previous) ->
+  buf = Buffer buf unless Buffer.isBuffer buf
 
-  #
-  # Packs the CRC1 checksum.
-  #
-  # @return [String]
-  #   The CRC1 checksum.
-  #
-  pack: (crc) ->
-    hex crc % 256
+  crc = ~~previous
+  accum = 0
+  accum += byte for byte in buf
+  crc += accum % 256
 
-  #
-  # Updates the CRC1 checksum.
-  #
-  # @param [String] data
-  #   The data to update the checksum with.
-  #
-  update: (data) ->
-    accum = 0
-    @each_byte data, (b) -> accum += b
-    @crc += accum % 256
-    @
+  crc % 256
