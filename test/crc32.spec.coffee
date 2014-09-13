@@ -1,5 +1,5 @@
 require './test_helpers'
-crc = require('../src').CRC32
+crc = require '../src/crc32'
 
 describe 'CRC32', ->
   example
