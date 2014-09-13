@@ -69,6 +69,8 @@ TABLE = [
   0xb40bbe37, 0xc30c8ea1, 0x5a05df1b, 0x2d02ef8d
 ]
 
+TABLE = new Int32Array TABLE if typeof Int32Array isnt 'undefined'
+
 module.exports = create (buf, previous) ->
   buf = Buffer buf unless Buffer.isBuffer buf
 
