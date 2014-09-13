@@ -11,6 +11,7 @@ Module for calculating Cyclic Redundancy Check (CRC).
 
 ## Features
 
+* Version 3 is 3-4 times faster than version 2.
 * Pure JavaScript implementation, no dependencies.
 * Provides CRC Tables for optimized calculations.
 * Provides support for the following CRC algorithms:
@@ -61,7 +62,7 @@ Incrementally calculate a CRC32:
 
 ## Thanks!
 
-This module is a direct port from Ruby's [Digest CRC](https://github.com/postmodern/digest-crc) module. Which is in turn based on [pycrc](http://www.tty1.net/pycrc/) library which is able to generate C source-code for all of the CRC algorithms, including their CRC Tables.
+[pycrc](http://www.tty1.net/pycrc/) library is which the source of all of the CRC tables.
 
 # License
 
