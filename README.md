@@ -31,9 +31,7 @@ If you've used `crc` module prior to version 2.x, you might have some inconsiste
 
 ## Support
 
-Please support me on [GitTip](https://www.gittip.com/alexgorbatchev/). I've spend days developing and grooming this module and hope to spend more time. If you have bitcoin, please use the QR below or `1CZyBREeHTmy8C5zVGHZHPwqBuWFmEuUCQ`:
-
-<a href="bitcoin:1CZyBREeHTmy8C5zVGHZHPwqBuWFmEuUCQ?amount=0.025&amp;label=alexgorbatchev/node-crc"><img src="bitcoin.png" width="150"/></a>
+<a href="https://blockchain.info/address/1CZyBREeHTmy8C5zVGHZHPwqBuWFmEuUCQ"><img src="bitcoin.png" width="150" align="right"/></a> Please support me on [GitTip](https://www.gittip.com/alexgorbatchev/). I've spend days developing and grooming this module and hope to spend more time. If you have bitcoin, please use the QR code or this wallet address [`1CZyBREeHTmy8C5zVGHZHPwqBuWFmEuUCQ`](https://blockchain.info/address/1CZyBREeHTmy8C5zVGHZHPwqBuWFmEuUCQ):
 
 ## Installation
 
