@@ -16,38 +16,41 @@ VALUES = [
   "killSignal String (Default: 'SIGTERM')"
 ]
 
-GLOBAL.crcSuiteFor = ({crc, value, expected}) ->
-  getReferenceValue = (model, value, callback) ->
+GLOBAL.crcSuiteFor = ({crc, value, expected, initial}) ->
+  getReferenceValue = (model, value, initial, callback) ->
     return callback null, expected if expected?
-    exec "#{__dirname}/pycrc/pycrc.py --model=#{model} --check-string=\"#{value}\"", (err, reference) ->
+    initial = initial? and "--xor-in=0x#{initial.toString(16)}" or ''
+    exec "#{__dirname}/pycrc/pycrc.py --model=#{model} #{initial} --check-string=\"#{value}\"", (err, reference) ->
       callback err, reference?.replace /^0x|\n$/g, ''
 
-  testValue = (value, callback) ->
-    getReferenceValue crc.model, value, (err, reference) ->
+  testValue = (value, initial, callback) ->
+    getReferenceValue crc.model, value, initial, (err, reference) ->
       return done err if err?
-      crc(value).toString(16).should.equal reference
+      crc(value, initial).toString(16).should.equal reference
       callback()
 
-  testSplitValue = (value, callback) ->
+  testSplitValue = (value, initial, callback) ->
     middle = value.length / 2
     chunk1 = value.substr 0, middle
     chunk2 = value.substr middle
 
-    v1 = crc chunk1
+    v1 = crc chunk1, initial
     v2 = crc chunk2, v1
 
-    getReferenceValue crc.model, value, (err, reference) ->
+    getReferenceValue crc.model, value, initial, (err, reference) ->
       return done err if err?
       v2.toString(16).should.equal reference
       callback()
 
   if value? and expected?
     describe "STRING: #{value}", ->
-      it 'should calculate a full checksum', (done) -> testValue value, done
-      it 'should calculate a checksum for multiple data', (done) -> testSplitValue value, done
+      it 'should calculate a full checksum', (done) -> testValue value, initial, done
+      it 'should calculate a checksum for multiple data', (done) -> testSplitValue value, initial, done
 
   else
     VALUES.map (value) ->
       describe "STRING: #{value}", ->
-        it 'should calculate a full checksum', (done) -> testValue value, done
-        it 'should calculate a checksum for multiple data', (done) -> testSplitValue value, done
+        it 'should calculate a full checksum', (done) -> testValue value, initial, done
+        it 'should calculate a full checksum with initial 0x0', (done) -> testValue value, 0, done
+        it 'should calculate a checksum for multiple data', (done) -> testSplitValue value, initial, done
+        it 'should calculate a checksum for multiple data with initial 0x0', (done) -> testSplitValue value, 0, done

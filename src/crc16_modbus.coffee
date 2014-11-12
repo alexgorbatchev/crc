@@ -42,6 +42,6 @@ TABLE = new Int32Array TABLE if typeof Int32Array isnt 'undefined'
 module.exports = create 'crc-16-modbus', (buf, previous) ->
   buf = Buffer buf unless Buffer.isBuffer buf
 
-  crc = ~~previous || 0xffff
+  crc = if previous? then ~~previous else 0xffff
   crc = ((TABLE[(crc ^ byte) & 0xff] ^ (crc >> 8)) & 0xffff) for byte in buf
   crc
