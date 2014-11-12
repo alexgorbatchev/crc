@@ -1,7 +1,7 @@
 {Buffer} = require 'buffer'
 create = require './create'
 
-module.exports = create (buf, previous) ->
+module.exports = create 'crc1', (buf, previous) ->
   buf = Buffer buf unless Buffer.isBuffer buf
 
   crc = ~~previous
