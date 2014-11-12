@@ -27,5 +27,5 @@ module.exports = create (buf, previous) ->
   buf = Buffer buf unless Buffer.isBuffer buf
 
   crc = ~~previous
-  crc = ((TABLE[(crc ^ byte) & 0xff] ^ (crc << 8)) & 0xff) for byte in buf
+  crc = ((TABLE[(crc ^ byte) & 0xff]) & 0xff) for byte in buf
   crc
