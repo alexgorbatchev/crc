@@ -23,7 +23,7 @@ TABLE = [
 
 TABLE = new Int32Array TABLE if typeof Int32Array isnt 'undefined'
 
-module.exports = create (buf, previous) ->
+module.exports = create 'dallas-1-wire', (buf, previous) ->
   buf = Buffer buf unless Buffer.isBuffer buf
 
   crc = ~~previous
