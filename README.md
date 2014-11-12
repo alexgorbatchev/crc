@@ -11,7 +11,8 @@ Module for calculating Cyclic Redundancy Check (CRC).
 
 ## Features
 
-* Version 3 is 3-4 times faster than version 2.
+* Full test suite comparing values against reference `pycrc` implementation.
+* Version 3.x is 3x to 4x faster than version 2.x.
 * Pure JavaScript implementation, no dependencies.
 * Provides CRC Tables for optimized calculations.
 * Provides support for the following CRC algorithms:
@@ -23,6 +24,10 @@ Module for calculating Cyclic Redundancy Check (CRC).
   * CRC16 Modbus `crc.crc16modbus(…)`
   * CRC24 `crc.crc24(…)`
   * CRC32 `crc.crc32(…)`
+
+## IMPORTANT
+
+If you've used `crc` module prior to version 2.x, you might have some inconsistentcies with the current implementation because it relied on very old code and wasn't checked against reference implementation. If you upgrading from 1.x, please take special care.
 
 ## Installation
 
