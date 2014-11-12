@@ -29,6 +29,12 @@ Module for calculating Cyclic Redundancy Check (CRC).
 
 If you've used `crc` module prior to version 2.x, you might have some inconsistentcies with the current implementation because it relied on very old code and wasn't checked against reference implementation. If you upgrading from 1.x, please take special care.
 
+## Support
+
+Please support me on [GitTip](https://www.gittip.com/alexgorbatchev/). I've spend days developing and grooming this module and hope to spend more time. If you have bitcoin, please use the QR below or `1CZyBREeHTmy8C5zVGHZHPwqBuWFmEuUCQ`:
+
+<a href="bitcoin:1CZyBREeHTmy8C5zVGHZHPwqBuWFmEuUCQ?amount=0.025&amp;label=alexgorbatchev/node-crc"><img src="bitcoin.png" width="150"/></a>
+
 ## Installation
 
     npm install crc
