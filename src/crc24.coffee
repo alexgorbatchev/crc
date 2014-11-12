@@ -42,6 +42,6 @@ TABLE = new Int32Array TABLE if typeof Int32Array isnt 'undefined'
 module.exports = create 'crc-24', (buf, previous) ->
   buf = Buffer buf unless Buffer.isBuffer buf
 
-  crc = ~~previous || 0xb704ce
+  crc = if previous? then ~~previous else 0xb704ce
   crc = ((TABLE[((crc >> 16) ^ byte) & 0xff] ^ (crc << 8)) & 0xffffff) for byte in buf
   crc
