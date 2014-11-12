@@ -1,0 +1,8 @@
+.svn
+.*.swp
+*.pyc
+*.pyo
+__pycache__
+doc/pycrc.1
+doc/pycrc.html
+test/pycrc_files.tar.gz
