@@ -2,4 +2,4 @@
 --recursive
 --reporter spec
 --ui bdd
---timeout 1000
+--timeout 5000
