@@ -27,7 +27,7 @@ Module for calculating Cyclic Redundancy Check (CRC).
 
 ## IMPORTANT
 
-If you've used `crc` module prior to version 2.x, you might have some inconsistentcies with the current implementation because it relied on very old code and wasn't checked against reference implementation. If you upgrading from 1.x, please take special care.
+If you've used `crc` module prior to version 2.x, you might have some inconsistencies with the current implementation because it relied on very old code and wasn't checked against reference implementation. If you upgrading from 1.x, please take special care.
 
 ## Support
 
