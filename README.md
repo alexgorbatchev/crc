@@ -22,6 +22,7 @@ Module for calculating Cyclic Redundancy Check (CRC).
   * CRC16 `crc.crc16(…)`
   * CRC16 CCITT `crc.crc16ccitt(…)`
   * CRC16 Modbus `crc.crc16modbus(…)`
+  * CRC16 XModem `crc.crc16xmodem(…)`
   * CRC24 `crc.crc24(…)`
   * CRC32 `crc.crc32(…)`
 
