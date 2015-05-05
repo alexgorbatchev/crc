@@ -1,7 +1,7 @@
 {Buffer} = require 'buffer'
 create = require './create'
 
-module.exports = create 'ccitt', (buf, previous) ->
+module.exports = create 'xmodem', (buf, previous) ->
   buf = Buffer buf unless Buffer.isBuffer buf
 
   crc = if previous? then ~~previous else 0x0
