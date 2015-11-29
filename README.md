@@ -64,11 +64,11 @@ Or using a `Buffer`:
 
 Incrementally calculate a CRC32:
 
-    value = crc32('one');
-    value = crc32('two', value);
-    value = crc32('three', value);
+    value = crc.crc32('one');
+    value = crc.crc32('two', value);
+    value = crc.crc32('three', value);
     value.toString(16);
-    # => "09e1c092"
+    # => "9e1c092"
 
 ## Thanks!
 
