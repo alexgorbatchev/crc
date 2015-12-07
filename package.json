@@ -5,6 +5,9 @@
   "keywords": [
     "crc"
   ],
+  "files": [
+    "lib"
+  ],
   "main": "./lib/index.js",
   "scripts": {
     "test": "mocha test/*.spec.coffee",
