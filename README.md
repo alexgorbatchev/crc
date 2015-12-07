@@ -7,7 +7,7 @@
 
 [![NPM](https://nodei.co/npm/crc.svg?style=flat)](https://npmjs.org/package/crc)
 
-Module for calculating Cyclic Redundancy Check (CRC).
+Module for calculating Cyclic Redundancy Check (CRC) for Node.js and the Browser.
 
 ## Features
 
@@ -22,8 +22,8 @@ Module for calculating Cyclic Redundancy Check (CRC).
   * CRC16 `crc.crc16(…)`
   * CRC16 CCITT `crc.crc16ccitt(…)`
   * CRC16 Modbus `crc.crc16modbus(…)`
-  * CRC16 XModem `crc.crc16xmodem(…)`
   * CRC16 Kermit `crc.crc16kermit(…)`
+  * CRC16 XModem `crc.crc16xmodem(…)`
   * CRC24 `crc.crc24(…)`
   * CRC32 `crc.crc32(…)`
 
@@ -33,7 +33,7 @@ If you've used `crc` module prior to version 2.x, you might have some inconsiste
 
 ## Support
 
-<a href="https://blockchain.info/address/1CZyBREeHTmy8C5zVGHZHPwqBuWFmEuUCQ"><img src="bitcoin.png" width="150" align="right"/></a> Please support me on [GitTip](https://www.gittip.com/alexgorbatchev/). I've spend days developing and grooming this module and hope to spend more time. If you have bitcoin, please use the QR code or this wallet address [`1CZyBREeHTmy8C5zVGHZHPwqBuWFmEuUCQ`](https://blockchain.info/address/1CZyBREeHTmy8C5zVGHZHPwqBuWFmEuUCQ):
+<a href="https://blockchain.info/address/1CZyBREeHTmy8C5zVGHZHPwqBuWFmEuUCQ"><img src="bitcoin.png" width="150" align="right"/></a> Please support me on [GitTip](https://www.gittip.com/alexgorbatchev/). I'm sure you know that it takes a lot of personal time to write and even more time to maintain open source projects. If you use this package, buy me a beer on GitTip or via Bitcoin [`1CZyBREeHTmy8C5zVGHZHPwqBuWFmEuUCQ`](https://blockchain.info/address/1CZyBREeHTmy8C5zVGHZHPwqBuWFmEuUCQ)
 
 ## Installation
 

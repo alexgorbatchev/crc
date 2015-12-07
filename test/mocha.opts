@@ -1,5 +1,5 @@
---compilers coffee:coffee-script/register
+--compilers js:babel-core/register
 --recursive
 --reporter spec
 --ui bdd
---timeout 5000
+--timeout 3000
