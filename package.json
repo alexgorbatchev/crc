@@ -21,9 +21,9 @@
     "beautify-benchmark": "^0.2.4",
     "benchmark": "^1.0.0",
     "buffer-crc32": "^0.2.3",
-    "chai": "~1.9.1",
+    "chai": "^3.4.1",
     "coffee-errors": "~0.8.6",
-    "coffee-script": "~1.7.1",
+    "coffee-script": "^1.10.0",
     "mocha": "*",
     "seedrandom": "^2.3.6"
   },
