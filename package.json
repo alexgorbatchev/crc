@@ -34,10 +34,5 @@
     "type": "git",
     "url": "git://github.com/alexgorbatchev/node-crc.git"
   },
-  "license": "MIT",
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
-  }
+  "license": "MIT"
 }
