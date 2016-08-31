@@ -24,7 +24,7 @@ let TABLE = [
 if (typeof(Int32Array) !== 'undefined') TABLE = new Int32Array(TABLE);
 
 module.exports = defineCrc('dallas-1-wire', function (buf, previous) {
-  if (!Buffer.isBuffer(buf)) buf = Buffer(buf);
+  if (!Buffer.isBuffer(buf)) buf = new Buffer(buf);
 
   let crc = ~~previous;
 
