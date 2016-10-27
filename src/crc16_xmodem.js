@@ -2,7 +2,7 @@ import {Buffer} from 'buffer';
 import defineCrc from './define_crc';
 
 module.exports = defineCrc('xmodem', function (buf, previous) {
-  if (!Buffer.isBuffer(buf)) buf = Buffer(buf);
+  if (!Buffer.isBuffer(buf)) buf = new Buffer(buf);
 
   let crc = typeof(previous) !== 'undefined' ? ~~previous : 0x0;
 
