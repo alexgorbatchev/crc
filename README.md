@@ -9,6 +9,10 @@
 
 Module for calculating Cyclic Redundancy Check (CRC) for Node.js and the Browser.
 
+# Important: Node >= 6.3.0 < 7.0.0
+
+There's currently a bug in Node [#9342](https://github.com/nodejs/node/issues/9342) that affects CRC calculation if `Buffer.split()` is used (see issue discussion for details). This affects versions all version starting from `6.3.0` up to but not including `7.0.0`. The patch [#9341](https://github.com/nodejs/node/pull/9341) will be included in the next `6.x` release.
+
 ## Features
 
 * Full test suite comparing values against reference `pycrc` implementation.
