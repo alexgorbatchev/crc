@@ -12,9 +12,8 @@ Module for calculating Cyclic Redundancy Check (CRC) for Node.js and the Browser
 ## Features
 
 * Full test suite comparing values against reference `pycrc` implementation.
-* Version 3.x is 3x to 4x faster than version 2.x.
 * Pure JavaScript implementation, no dependencies.
-* Provides CRC Tables for optimized calculations.
+* Provides CRC tables for optimized calculations.
 * Provides support for the following CRC algorithms:
   * CRC1 `crc.crc1(…)`
   * CRC8 `crc.crc8(…)`
@@ -27,49 +26,52 @@ Module for calculating Cyclic Redundancy Check (CRC) for Node.js and the Browser
   * CRC24 `crc.crc24(…)`
   * CRC32 `crc.crc32(…)`
 
-## IMPORTANT
-
-If you've used `crc` module prior to version 2.x, you might have some inconsistencies with the current implementation because it relied on very old code and wasn't checked against reference implementation. If you upgrading from 1.x, please take special care.
-
-## Support
-
-<a href="https://blockchain.info/address/1CZyBREeHTmy8C5zVGHZHPwqBuWFmEuUCQ"><img src="bitcoin.png" width="150" align="right"/></a> Please support me on [GitTip](https://www.gittip.com/alexgorbatchev/). I'm sure you know that it takes a lot of personal time to write and even more time to maintain open source projects. If you use this package, buy me a beer on GitTip or via Bitcoin [`1CZyBREeHTmy8C5zVGHZHPwqBuWFmEuUCQ`](https://blockchain.info/address/1CZyBREeHTmy8C5zVGHZHPwqBuWFmEuUCQ)
-
 ## Installation
 
-    npm install crc
+```
+npm install crc
+```
 
-## Running tests
-
-    $ npm install
-    $ npm test
-
-## Usage Example
+## Usage
 
 Calculate a CRC32:
 
-    var crc = require('crc');
+```js
+var crc = require('crc');
 
-    crc.crc32('hello').toString(16);
-    # => "3610a686"
+crc.crc32('hello').toString(16);
+// "3610a686"
+```
 
 Calculate a CRC32 of a file:
 
-    crc.crc32(fs.readFileSync('README.md', 'utf8')).toString(16);
-    # => "127ad531"
+```js
+crc.crc32(fs.readFileSync('README.md', 'utf8')).toString(16);
+// "127ad531"
+```
 
 Or using a `Buffer`:
 
-    crc.crc32(fs.readFileSync('README.md')).toString(16);
-    # => "127ad531"
+```js
+crc.crc32(fs.readFileSync('README.md')).toString(16);
+// "127ad531"
+```
 
 Incrementally calculate a CRC32:
 
-    value = crc.crc32('one');
-    value = crc.crc32('two', value);
-    value = crc.crc32('three', value);
-    value.toString(16);
-    # => "9e1c092"
+```js
+value = crc.crc32('one');
+value = crc.crc32('two', value);
+value = crc.crc32('three', value);
+value.toString(16);
+// "9e1c092"
+```
+
+## Running tests
+
+```
+npm test
+```
 
 ## Thanks!
 
