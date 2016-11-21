@@ -1,8 +1,9 @@
 import {Buffer} from 'buffer';
+import createBuffer from './create_buffer';
 import defineCrc from './define_crc';
 
 module.exports = defineCrc('crc1', function (buf, previous) {
-  if (!Buffer.isBuffer(buf)) buf = new Buffer(buf);
+  if (!Buffer.isBuffer(buf)) buf = createBuffer(buf);
 
   let crc = ~~previous;
   let accum = 0;
