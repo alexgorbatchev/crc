@@ -10,3 +10,7 @@ node_js:
   - "6.9.2"
   - "7.0"
   - "7.1"
+matrix:
+  allow_failures:
+    - node_js: "6.9.1"
+    
