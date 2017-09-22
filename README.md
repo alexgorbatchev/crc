@@ -42,7 +42,7 @@ npm install crc
 Calculate a CRC32:
 
 ```js
-var crc = require('crc');
+const crc = require('crc');
 
 crc.crc32('hello').toString(16);
 // "3610a686"
@@ -70,6 +70,15 @@ value = crc.crc32('two', value);
 value = crc.crc32('three', value);
 value.toString(16);
 // "9e1c092"
+```
+
+For web distribution, it's best to require specific modules that you need to avoid bundling unnecessary code.
+
+```js
+const crc32 = require('crc/lib/crc32');
+
+crc32('hello').toString(16);
+// "3610a686"
 ```
 
 ## Running tests
