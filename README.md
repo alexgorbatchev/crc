@@ -29,6 +29,7 @@ There's was a bug in Node [#9342](https://github.com/nodejs/node/issues/9342) th
   * CRC16 XModem `crc.crc16xmodem(…)`
   * CRC24 `crc.crc24(…)`
   * CRC32 `crc.crc32(…)`
+  * CRCJAM `crc.crcjam(…)`
 
 ## Installation
 
