@@ -72,18 +72,10 @@ let TABLE = [
 
 if (typeof(Int32Array) !== 'undefined') TABLE = new Int32Array(TABLE);
 
-module.exports = defineCrc('jam', function (buf, previous) {
+module.exports = defineCrc('jam', function (buf, previous = -1) {
   if (!Buffer.isBuffer(buf)) buf = createBuffer(buf);
 
-  if (typeof(previous) === 'undefined') {
-    previous = ~~previous ^ -1;
-  } else if (previous === 0) {
-    previous = 0;
-  } else {
-    previous = ~~previous;
-  }
-
-  let crc = previous;
+  let crc = previous === 0 ? 0 : ~~previous;
 
   for (let index = 0; index < buf.length; index++) {
     const byte = buf[index];
