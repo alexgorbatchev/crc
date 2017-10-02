@@ -2,7 +2,7 @@ import {Buffer} from 'buffer';
 import createBuffer from './create_buffer';
 import defineCrc from './define_crc';
 
-module.exports = defineCrc('crc1', function (buf, previous) {
+const crc1 = defineCrc('crc1', function (buf, previous) {
   if (!Buffer.isBuffer(buf)) buf = createBuffer(buf);
 
   let crc = ~~previous;
@@ -16,3 +16,5 @@ module.exports = defineCrc('crc1', function (buf, previous) {
   crc += accum % 256
   return crc % 256;
 });
+
+export default crc1;

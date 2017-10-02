@@ -72,7 +72,7 @@ let TABLE = [
 
 if (typeof(Int32Array) !== 'undefined') TABLE = new Int32Array(TABLE);
 
-module.exports = defineCrc('jam', function (buf, previous = -1) {
+const crcjam = defineCrc('jam', function (buf, previous = -1) {
   if (!Buffer.isBuffer(buf)) buf = createBuffer(buf);
 
   let crc = previous === 0 ? 0 : ~~previous;
@@ -84,3 +84,5 @@ module.exports = defineCrc('jam', function (buf, previous = -1) {
 
   return crc;
 });
+
+export default crcjam;
