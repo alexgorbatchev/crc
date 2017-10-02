@@ -24,7 +24,7 @@ let TABLE = [
 
 if (typeof(Int32Array) !== 'undefined') TABLE = new Int32Array(TABLE);
 
-module.exports = defineCrc('crc-8', function (buf, previous) {
+const crc8 = defineCrc('crc-8', function (buf, previous) {
   if (!Buffer.isBuffer(buf)) buf = createBuffer(buf);
 
   let crc = ~~previous;
@@ -36,3 +36,5 @@ module.exports = defineCrc('crc-8', function (buf, previous) {
 
   return crc;
 });
+
+export default crc8;

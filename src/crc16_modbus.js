@@ -40,7 +40,7 @@ let TABLE = [
 
 if (typeof(Int32Array) !== 'undefined') TABLE = new Int32Array(TABLE);
 
-module.exports = defineCrc('crc-16-modbus', function (buf, previous) {
+const crc16_modbus = defineCrc('crc-16-modbus', function (buf, previous) {
   if (!Buffer.isBuffer(buf)) buf = createBuffer(buf);
 
   let crc = typeof(previous) !== 'undefined' ? ~~previous : 0xffff;
@@ -52,3 +52,5 @@ module.exports = defineCrc('crc-16-modbus', function (buf, previous) {
 
   return crc;
 });
+
+export default crc16_modbus;
