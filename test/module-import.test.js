@@ -12,12 +12,12 @@ import chai from 'chai';
 chai.should();
 
 describe('Module imports', function() {
-    describe('"import foo from \'crc\'" equals "import foo from \'crc/src/foo\'" ', function(){
+    describe('Functions from a \'crc/src/\' file behave the same as functions from the module', function(){
         it('crc32', function() {
-            crc32_mod.should.equal(crc32_src);
+            crc32_mod("1234567890").should.equal(crc32_src("1234567890"));
         });
         it('crc16_kermit', function() {
-            crc16kermit_mod.should.equal(crc16kermit_src);
+            crc16kermit_mod("1234567890").should.equal(crc16kermit_src("1234567890"));
         });
     });
     describe('Transpiled functions from \'crc/lib/foo\' behave the same as module functions', function(){
