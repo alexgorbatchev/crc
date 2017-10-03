@@ -6,9 +6,11 @@
     "crc"
   ],
   "files": [
-    "lib"
+    "lib",
+    "src"
   ],
   "main": "./lib/index.js",
+  "module": "./src/index.js",
   "scripts": {
     "test": "mocha test/*.test.js",
     "pretest": "cd src && babel --out-dir ../lib *.js"

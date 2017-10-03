@@ -40,7 +40,7 @@ let TABLE = [
 
 if (typeof(Int32Array) !== 'undefined') TABLE = new Int32Array(TABLE);
 
-const crc16_ccitt = defineCrc('ccitt', function (buf, previous) {
+const crc16ccitt = defineCrc('ccitt', function (buf, previous) {
   if (!Buffer.isBuffer(buf)) buf = createBuffer(buf);
 
   let crc = typeof(previous) !== 'undefined' ? ~~previous : 0xffff;
@@ -53,4 +53,4 @@ const crc16_ccitt = defineCrc('ccitt', function (buf, previous) {
   return crc;
 });
 
-export default crc16_ccitt;
+export default crc16ccitt;

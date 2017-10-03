@@ -40,7 +40,7 @@ let TABLE = [
 
 if (typeof(Int32Array) !== 'undefined') TABLE = new Int32Array(TABLE);
 
-const kermit = defineCrc('kermit', function (buf, previous) {
+const crc16kermit = defineCrc('kermit', function (buf, previous) {
   if (!Buffer.isBuffer(buf)) buf = createBuffer(buf);
 
   let crc = typeof(previous) !== 'undefined' ? ~~previous : 0x0000;
@@ -53,4 +53,4 @@ const kermit = defineCrc('kermit', function (buf, previous) {
   return crc;
 });
 
-export default kermit;
+export default crc16kermit;
