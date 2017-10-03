@@ -24,7 +24,7 @@ let TABLE = [
 
 if (typeof(Int32Array) !== 'undefined') TABLE = new Int32Array(TABLE);
 
-const crc8_1wire = defineCrc('dallas-1-wire', function (buf, previous) {
+const crc81wire = defineCrc('dallas-1-wire', function (buf, previous) {
   if (!Buffer.isBuffer(buf)) buf = createBuffer(buf);
 
   let crc = ~~previous;
@@ -37,4 +37,4 @@ const crc8_1wire = defineCrc('dallas-1-wire', function (buf, previous) {
   return crc;
 });
 
-export default crc8_1wire;
+export default crc81wire;
