@@ -72,13 +72,32 @@ value.toString(16);
 // "9e1c092"
 ```
 
-For web distribution, it's best to require specific modules that you need to avoid bundling unnecessary code.
+### Bundling
+
+This library exposes an ES6 module, so if you are using a bundling tool such as webpack2 or
+rollup, you can just `import` it, and the bundle will not include unneccesary code:
 
 ```js
-const crc32 = require('crc/lib/crc32');
+import crc from 'crc';
+
+crc.crc32('hello').toString(16);
+// "3610a686"
+```
+
+Or, alternatively:
+
+```js
+import { crc32 } from 'crc';
 
 crc32('hello').toString(16);
-// "3610a686"
+```
+
+If your environment does not support `import`/`export` of ES6 modules:
+
+```js
+const crc32 = require('crc/lib/crc32').default;
+
+crc32('hello').toString(16);
 ```
 
 ## Running tests
