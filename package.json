@@ -34,5 +34,8 @@
     "type": "git",
     "url": "git://github.com/alexgorbatchev/node-crc.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "buffer": "^5.1.0"
+  }
 }
