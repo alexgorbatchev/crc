@@ -1,6 +1,6 @@
 {
   "name": "crc",
-  "version": "3.5.0",
+  "version": "3.6.0",
   "description": "Module for calculating Cyclic Redundancy Check (CRC) for Node.js and the Browser.",
   "keywords": [
     "crc"
