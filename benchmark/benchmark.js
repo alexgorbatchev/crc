@@ -1,13 +1,13 @@
-var benchmark = require('benchmark');
-var benchmarks = require('beautify-benchmark');
-var seedrandom = require('seedrandom');
+/* eslint-disable import/no-extraneous-dependencies */
+const benchmark = require('benchmark');
+const benchmarks = require('beautify-benchmark');
+const seedrandom = require('seedrandom');
 
-var getBuffer = function(size) {
-  var buffer = new Buffer(size);
-  var rng = seedrandom('body ' + size);
+const getBuffer = size => {
+  const buffer = Buffer.alloc(size);
+  const rng = seedrandom('body ' + size);
 
-  var end = buffer.length - 1;
-  for (var i = 0; 0 < end ? i <= end : i >= end; 0 < end ? i++ : i--) {
+  for (let i = 0; i < buffer.length - 1; i++) {
     buffer[i] = (rng() * 94 + 32) | 0;
   }
 
@@ -17,22 +17,17 @@ var getBuffer = function(size) {
 global.crc = require('../lib');
 global.bufferCRC32 = require('buffer-crc32');
 
-var suite = new benchmark.Suite();
-
-suite.on('start', function(e) {
-  return process.stdout.write('Working...\n\n');
-});
-
-suite.on('cycle', function(e) {
-  return benchmarks.add(e.target);
-});
-
-suite.on('complete', function() {
-  return benchmarks.log();
-});
+const suite = new benchmark.Suite();
+suite.on('start', () => process.stdout.write('Working...\n\n'));
+suite.on('cycle', e => benchmarks.add(e.target));
+suite.on('complete', () => benchmarks.log());
 
 module.exports = {
   getBuffer: getBuffer,
-  add() { return suite.add(...arguments); },
-  run() { return suite.run({async: false}); }
+  add() {
+    return suite.add(...arguments);
+  },
+  run() {
+    return suite.run({ async: false });
+  },
 };
