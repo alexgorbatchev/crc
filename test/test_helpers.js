@@ -18,27 +18,27 @@ export default function crcSuiteFor({ crc, value, expected, initial }) {
   function getReferenceValueForBuffer(model, buffer, initial, callback) {
     if (expected) return callback(null, expected);
 
-    const filename = `${__dirname}/tmp`;
-    fs.writeFileSync(filename, buffer);
     initial = typeof initial !== 'undefined' ? `--xor-in=0x${initial.toString(16)}` : '';
-    exec(
-      `${__dirname}/pycrc/pycrc.py --model=${model} ${initial} --check-file="${filename}"`,
-      function(err, reference) {
-        fs.unlinkSync(filename);
-        callback(err, (reference || '').replace(/^0x|\n$/g, ''));
-      }
-    );
+
+    const filename = `${__dirname}/tmp`;
+    const cmd = `pycrc.py --model=${model} ${initial} --check-file="${filename}"`;
+
+    fs.writeFileSync(filename, buffer);
+
+    exec(`${__dirname}/pycrc/${cmd}`, (err, reference) => {
+      fs.unlinkSync(filename);
+      callback(err, (reference || '').replace(/^0x|\n$/g, ''));
+    });
   }
 
   function getReferenceValueForString(model, string, initial, callback) {
     if (expected) return callback(null, expected);
 
     initial = typeof initial !== 'undefined' ? `--xor-in=0x${initial.toString(16)}` : '';
-    exec(
-      `${__dirname}/pycrc/pycrc.py --model=${model} ${initial} --check-string="${string}"`,
-      function(err, reference) {
-        callback(err, (reference || '').replace(/^0x|\n$/g, ''));
-      }
+    const cmd = `pycrc.py --model=${model} ${initial} --check-string="${string}"`;
+
+    exec(`${__dirname}/pycrc/${cmd}`, (err, reference) =>
+      callback(err, (reference || '').replace(/^0x|\n$/g, ''))
     );
   }
 
