@@ -2,7 +2,7 @@ import {Buffer} from 'buffer';
 import createBuffer from './create_buffer';
 import defineCrc from './define_crc';
 
-module.exports = defineCrc('xmodem', function (buf, previous) {
+const crc16xmodem = defineCrc('xmodem', function (buf, previous) {
   if (!Buffer.isBuffer(buf)) buf = createBuffer(buf);
 
   let crc = typeof(previous) !== 'undefined' ? ~~previous : 0x0;
@@ -23,3 +23,5 @@ module.exports = defineCrc('xmodem', function (buf, previous) {
 
   return crc;
 });
+
+export default crc16xmodem;

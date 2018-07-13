@@ -72,7 +72,7 @@ let TABLE = [
 
 if (typeof(Int32Array) !== 'undefined') TABLE = new Int32Array(TABLE);
 
-module.exports = defineCrc('crc-32', function (buf, previous) {
+const crc32 = defineCrc('crc-32', function (buf, previous) {
   if (!Buffer.isBuffer(buf)) buf = createBuffer(buf);
 
   let crc = previous === 0 ? 0 : ~~previous ^ -1
@@ -84,3 +84,5 @@ module.exports = defineCrc('crc-32', function (buf, previous) {
 
   return crc ^ -1;
 });
+
+export default crc32;

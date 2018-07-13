@@ -6,9 +6,11 @@
     "crc"
   ],
   "files": [
-    "lib"
+    "lib",
+    "src"
   ],
   "main": "./lib/index.js",
+  "module": "./src/index.js",
   "scripts": {
     "test": "mocha test/*.test.js",
     "pretest": "cd src && babel --out-dir ../lib *.js"
@@ -25,7 +27,7 @@
     "benchmark": "^1.0.0",
     "buffer-crc32": "^0.2.3",
     "chai": "^3.4.1",
-    "mocha": "*",
+    "mocha": "<4.0.0",
     "seedrandom": "^2.3.6"
   },
   "homepage": "https://github.com/alexgorbatchev/node-crc",
