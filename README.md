@@ -1,35 +1,25 @@
 # crc
 
-[![GitTip](http://img.shields.io/gittip/alexgorbatchev.svg?style=flat)](https://www.gittip.com/alexgorbatchev/)
-[![Dependency status](http://img.shields.io/david/alexgorbatchev/node-crc.svg?style=flat)](https://david-dm.org/alexgorbatchev/node-crc)
-[![devDependency Status](http://img.shields.io/david/dev/alexgorbatchev/node-crc.svg?style=flat)](https://david-dm.org/alexgorbatchev/node-crc?type=dev)
-[![Build Status](http://img.shields.io/travis/alexgorbatchev/node-crc.svg?style=flat&branch=master)](https://travis-ci.org/alexgorbatchev/node-crc)
-
-[![NPM](https://nodei.co/npm/crc.svg?style=flat)](https://npmjs.org/package/crc)
-
-Module for calculating Cyclic Redundancy Check (CRC) for Node.js and the Browser.
-
-# Important: Node >= 6.3.0 < 6.9.2
-
-There's was a bug in Node [#9342](https://github.com/nodejs/node/issues/9342) that affected CRC calculation if `Buffer.split()` is used (see issue discussion for details). This affected all version starting from `6.3.0` up to but not including `6.9.2`. The patch [#9341](https://github.com/nodejs/node/pull/9341) was released in `6.9.2`. If you are upgrading and seeing odd CRC calculation mismatches, this might be the reason.
+The module for calculating Cyclic Redundancy Check (CRC) for Node.js and the Browser.
 
 ## Features
 
-* Full test suite comparing values against reference `pycrc` implementation.
-* Pure JavaScript implementation, no dependencies.
-* Provides CRC tables for optimized calculations.
-* Provides support for the following CRC algorithms:
-  * CRC1 `crc.crc1(…)`
-  * CRC8 `crc.crc8(…)`
-  * CRC8 1-Wire `crc.crc81wire(…)`
-  * CRC16 `crc.crc16(…)`
-  * CRC16 CCITT `crc.crc16ccitt(…)`
-  * CRC16 Modbus `crc.crc16modbus(…)`
-  * CRC16 Kermit `crc.crc16kermit(…)`
-  * CRC16 XModem `crc.crc16xmodem(…)`
-  * CRC24 `crc.crc24(…)`
-  * CRC32 `crc.crc32(…)`
-  * CRCJAM `crc.crcjam(…)`
+- Full test suite comparing values against reference `pycrc` implementation.
+- Pure JavaScript implementation, no dependencies.
+- ES6 modules.
+- Provides CRC tables for optimized calculations.
+- Provides support for the following CRC algorithms:
+  - CRC1 (`crc1`)
+  - CRC8 (`crc8`)
+  - CRC8 1-Wire (`crc81wire`)
+  - CRC16 (`crc16`)
+  - CRC16 CCITT (`crc16ccitt`)
+  - CRC16 Modbus (`crc16modbus`)
+  - CRC16 Kermit (`crc16kermit`)
+  - CRC16 XModem (`crc16xmodem`)
+  - CRC24 (`crc24`)
+  - CRC32 (`crc32`)
+  - CRCJAM (`crcjam`)
 
 ## Installation
 
@@ -42,23 +32,30 @@ npm install crc
 Calculate a CRC32:
 
 ```js
-const crc = require('crc');
+import { crc32 } from 'crc';
+crc32('hello').toString(16);
+// "3610a686"
+```
 
-crc.crc32('hello').toString(16);
+or
+
+```js
+const { crc32 } = require('crc');
+crc32('hello').toString(16);
 // "3610a686"
 ```
 
 Calculate a CRC32 of a file:
 
 ```js
-crc.crc32(fs.readFileSync('README.md', 'utf8')).toString(16);
+crc32(fs.readFileSync('README.md', 'utf8')).toString(16);
 // "127ad531"
 ```
 
 Or using a `Buffer`:
 
 ```js
-crc.crc32(fs.readFileSync('README.md')).toString(16);
+crc32(fs.readFileSync('README.md')).toString(16);
 // "127ad531"
 ```
 
@@ -72,10 +69,14 @@ value.toString(16);
 // "9e1c092"
 ```
 
+# Important: Node >= 6.3.0 < 6.9.2
+
+There's was a bug in Node [#9342](https://github.com/nodejs/node/issues/9342) that affected CRC calculation if `Buffer.split()` is used (see issue discussion for details). This affected all version starting from `6.3.0` up to but not including `6.9.2`. The patch [#9341](https://github.com/nodejs/node/pull/9341) was released in `6.9.2`. If you are upgrading and seeing odd CRC calculation mismatches, this might be the reason.
+
 ### Bundling
 
-This library exposes an ES6 module, so if you are using a bundling tool such as webpack2 or
-rollup, you can just `import` it, and the bundle will not include unneccesary code:
+This library exposes an ES6 module, so if you are using a bundling tool such as Webpack or
+Rollup, you can just `import` it, and the bundle will not include unneccesary code:
 
 ```js
 import crc from 'crc';
@@ -88,14 +89,6 @@ Or, alternatively:
 
 ```js
 import { crc32 } from 'crc';
-
-crc32('hello').toString(16);
-```
-
-If your environment does not support `import`/`export` of ES6 modules:
-
-```js
-const crc32 = require('crc/lib/crc32').default;
 
 crc32('hello').toString(16);
 ```
