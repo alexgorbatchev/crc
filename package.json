@@ -10,10 +10,10 @@
     "src"
   ],
   "main": "./lib/index.js",
-  "module": "./src/index.js",
+  "module": "./src/es6/index.js",
   "scripts": {
     "test": "mocha test/*.test.js",
-    "pretest": "cd src && babel --out-dir ../lib *.js"
+    "pretest": "cd src && babel --out-dir ../lib *.js **/*.js"
   },
   "author": {
     "name": "Alex Gorbatchev",

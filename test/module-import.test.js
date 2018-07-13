@@ -1,11 +1,11 @@
 
 import crc32_src from '../src/crc32';
 import { crc32 as crc32_mod } from '../lib/index';
-import crc32_lib from '../lib/crc32';
+import crc32_lib from '../lib/es6/crc32';
 
 import crc16kermit_src from '../src/crc16_kermit';
 import { crc16kermit as crc16kermit_mod } from '../lib/index';
-import crc16kermit_lib from '../lib/crc16_kermit';
+import crc16kermit_lib from '../lib/es6/crc16_kermit';
 
 import chai from 'chai';
 
