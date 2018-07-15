@@ -2,7 +2,11 @@
 
 cd webpack-test
 
-[ ! -d node_modules ] && npm install
+if [ ! -d node_modules ]; then
+  npm install
+  ln -s $(cd .. && pwd) node_modules/crc
+fi
+
 $(npm bin)/webpack --mode=production
 
 if [[ "$(node output.js)" != "222957957" ]]; then
