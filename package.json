@@ -7,14 +7,15 @@
   ],
   "files": [
     "lib",
-    "src"
+    "*.js"
   ],
   "main": "./lib/index.js",
-  "module": "./src/es6/index.js",
+  "module": "./index.js",
   "scripts": {
-    "lint": "eslint {test,src}/{,**/}*.js",
-    "test": "npm run lint && mocha test/*.test.js",
-    "pretest": "cd src && babel --out-dir ../lib *.js **/*.js"
+    "lint": "eslint *.js test/{,**/}*.js",
+    "test": "npm run lint && mocha test/*.test.js && ./webpack-test/test.sh",
+    "build": "rm -fr lib; babel --out-dir ./lib/es6 *.js; cd commonjs; babel --out-dir ../lib *.js",
+    "pretest": "npm run build"
   },
   "author": {
     "name": "Alex Gorbatchev",

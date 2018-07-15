@@ -32,7 +32,7 @@ npm install crc
 Calculate a CRC32:
 
 ```js
-import { crc32 } from 'crc';
+import crc32 from 'crc/crc32';
 crc32('hello').toString(16);
 // "3610a686"
 ```
