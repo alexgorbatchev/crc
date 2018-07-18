@@ -29,7 +29,7 @@ npm install crc
 
 ## Usage
 
-Calculate a CRC32:
+Calculate a CRC32 (recommended way):
 
 ```js
 import crc32 from 'crc/crc32';
@@ -37,7 +37,15 @@ crc32('hello').toString(16);
 // "3610a686"
 ```
 
-or
+Import everything (this may bloat bundle size):
+
+```js
+import crc from 'crc';
+crc.crc32('hello').toString(16);
+// "3610a686"
+```
+
+Or use CommonJS (compatability mode, no longer recommended):
 
 ```js
 const { crc32 } = require('crc');
@@ -55,7 +63,7 @@ crc32(fs.readFileSync('README.md', 'utf8')).toString(16);
 Or using a `Buffer`:
 
 ```js
-crc32(fs.readFileSync('README.md')).toString(16);
+crc32(fs.readFileSync('README.md', 'utf8')).toString(16);
 // "127ad531"
 ```
 
@@ -72,26 +80,6 @@ value.toString(16);
 # Important: Node >= 6.3.0 < 6.9.2
 
 There's was a bug in Node [#9342](https://github.com/nodejs/node/issues/9342) that affected CRC calculation if `Buffer.split()` is used (see issue discussion for details). This affected all version starting from `6.3.0` up to but not including `6.9.2`. The patch [#9341](https://github.com/nodejs/node/pull/9341) was released in `6.9.2`. If you are upgrading and seeing odd CRC calculation mismatches, this might be the reason.
-
-### Bundling
-
-This library exposes an ES6 module, so if you are using a bundling tool such as Webpack or
-Rollup, you can just `import` it, and the bundle will not include unneccesary code:
-
-```js
-import crc from 'crc';
-
-crc.crc32('hello').toString(16);
-// "3610a686"
-```
-
-Or, alternatively:
-
-```js
-import { crc32 } from 'crc';
-
-crc32('hello').toString(16);
-```
 
 ## Running tests
 
