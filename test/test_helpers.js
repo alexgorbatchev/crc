@@ -27,7 +27,7 @@ export default function crcSuiteFor({ crc, value, expected, initial }) {
 
     exec(`${__dirname}/pycrc/${cmd}`, (err, reference) => {
       fs.unlinkSync(filename);
-      callback(err, (reference || '').replace(/^0x|\n$/g, ''));
+      callback(err, (reference || '').replace(/^0x|\n$|\r\n$/g, ''));
     });
   }
 
@@ -38,7 +38,7 @@ export default function crcSuiteFor({ crc, value, expected, initial }) {
     const cmd = `pycrc.py --model=${model} ${initial} --check-string="${string}"`;
 
     exec(`${__dirname}/pycrc/${cmd}`, (err, reference) =>
-      callback(err, (reference || '').replace(/^0x|\n$/g, ''))
+      callback(err, (reference || '').replace(/^0x|\n$|\r\n$/g, ''))
     );
   }
 
