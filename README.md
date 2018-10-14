@@ -63,7 +63,7 @@ crc32(fs.readFileSync('README.md', 'utf8')).toString(16);
 Or using a `Buffer`:
 
 ```js
-crc32(fs.readFileSync('README.md', 'utf8')).toString(16);
+crc32(fs.readFileSync('README.md')).toString(16);
 // "127ad531"
 ```
 
