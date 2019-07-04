@@ -44,11 +44,12 @@ if (typeof Int32Array !== 'undefined') TABLE = new Int32Array(TABLE);
 const crc16ccitt = defineCrc('ccitt', function(buf, previous) {
   if (!Buffer.isBuffer(buf)) buf = createBuffer(buf);
 
-  let crc = typeof previous !== 'undefined' ? ~~previous : 0xffff;
+  let crc = typeof previous !== 'undefined' ? ~~previous : 0x0000;
 
   for (let index = 0; index < buf.length; index++) {
     const byte = buf[index];
-    crc = (TABLE[((crc >> 8) ^ byte) & 0xff] ^ (crc << 8)) & 0xffff;
+    let crctbl_idx = ((crc >> 8) ^ byte) & 0xff
+    crc = (TABLE[crctbl_idx] ^ (crc << 8)) & 0xffff;
   }
 
   return crc;
