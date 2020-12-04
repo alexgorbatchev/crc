@@ -45,7 +45,7 @@ crc.crc32('hello').toString(16);
 // "3610a686"
 ```
 
-Or use CommonJS (compatability mode, no longer recommended):
+Or use CommonJS (compatibility mode, no longer recommended):
 
 ```js
 const { crc32 } = require('crc');
