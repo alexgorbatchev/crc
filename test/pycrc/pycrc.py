@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 #  pycrc -- parameterisable CRC calculation utility and C source code generator
 #
