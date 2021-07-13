@@ -1,9 +1,8 @@
-import { Buffer } from 'buffer';
 import createBuffer from './create_buffer';
 import defineCrc from './define_crc';
 
 const crc1 = defineCrc('crc1', (value, previous) => {
-  const buf = Buffer.isBuffer(value) ? value : createBuffer(value);
+  const buf = createBuffer(value);
   let crc = ~~previous;
   let accum = 0;
 

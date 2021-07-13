@@ -1,4 +1,3 @@
-import { Buffer } from 'buffer';
 import createBuffer from './create_buffer';
 import defineCrc from './define_crc';
 
@@ -43,7 +42,7 @@ if (typeof Int32Array !== 'undefined') {
 }
 
 const crcjam = defineCrc('jam', (value, previous = -1) => {
-  const buf = Buffer.isBuffer(value) ? value : createBuffer(value);
+  const buf = createBuffer(value);
   let crc = previous === 0 ? 0 : ~~previous;
 
   for (let index = 0; index < buf.length; index++) {

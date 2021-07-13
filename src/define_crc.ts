@@ -1,7 +1,9 @@
 import { Buffer } from 'buffer';
 
+export type BufferInput = string | ArrayBuffer | Uint8Array | Buffer | any[];
+
 export interface CRCCalculator {
-  (value: string | Buffer, previous: number): number;
+  (value: BufferInput, previous: number): number;
 }
 
 export interface CRCModule extends CRCCalculator {

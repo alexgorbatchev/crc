@@ -1,4 +1,3 @@
-import { Buffer } from 'buffer';
 import createBuffer from './create_buffer';
 import defineCrc from './define_crc';
 
@@ -33,7 +32,7 @@ if (typeof Int32Array !== 'undefined') {
 }
 
 const crc16modbus = defineCrc('crc-16-modbus', (value, previous) => {
-  const buf = Buffer.isBuffer(value) ? value : createBuffer(value);
+  const buf = createBuffer(value);
   let crc = typeof previous !== 'undefined' ? ~~previous : 0xffff;
 
   for (let index = 0; index < buf.length; index++) {
