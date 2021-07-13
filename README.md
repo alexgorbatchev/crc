@@ -1,14 +1,14 @@
 # crc
 
-The module for calculating Cyclic Redundancy Check (CRC) for Node.js and the Browser.
+Functions for calculating Cyclic Redundancy Checks (CRC) values for the Node.js and front-end.
 
 ## Features
 
-- Full test suite comparing values against reference `pycrc` implementation.
-- Pure JavaScript implementation, no dependencies.
+- Written in TypeScript and provides typings out of the box.
+- Pure JavaScript implementation, no native dependencies.
+- Full test suite using `pycrc` as a refenrence.
 - ES6 modules.
-- Provides CRC tables for optimized calculations.
-- Provides support for the following CRC algorithms:
+- Supports for the following CRC algorithms:
   - CRC1 (`crc1`)
   - CRC8 (`crc8`)
   - CRC8 1-Wire (`crc81wire`)
@@ -37,11 +37,20 @@ crc32('hello').toString(16);
 // "3610a686"
 ```
 
-Import everything (this may bloat bundle size):
+Import everything (this will increase bundle size if a bundler is used):
 
 ```js
 import crc from 'crc';
 crc.crc32('hello').toString(16);
+// "3610a686"
+```
+
+If you wish to minimize bundle size (meaning avoid `Buffer` being a dependency), you can import CRC calculators directly and pass an instance of `Int8Array` into it:
+
+```js
+import crc32 from 'crc/calculators/crc32';
+const helloWorld = new Int8Array([104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]);
+crc32(helloWorld).toString(16);
 // "3610a686"
 ```
 
@@ -67,12 +76,12 @@ crc32(fs.readFileSync('README.md', 'utf8')).toString(16);
 // "127ad531"
 ```
 
-Incrementally calculate a CRC32:
+Incrementally calculate a CRC:
 
 ```js
-value = crc.crc32('one');
-value = crc.crc32('two', value);
-value = crc.crc32('three', value);
+value = crc32('one');
+value = crc32('two', value);
+value = crc32('three', value);
 value.toString(16);
 // "9e1c092"
 ```
