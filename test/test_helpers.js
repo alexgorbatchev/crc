@@ -2,7 +2,7 @@ import fs from 'fs';
 import chai from 'chai';
 import { exec } from 'child_process';
 
-const VALUES = [
+const TEST_VALUES = [
   '1234567890',
   'cwd String Current working directory of the child process',
   'env Object Environment key-value pairs',
@@ -14,14 +14,13 @@ const VALUES = [
 
 chai.should();
 
-export default function crcSuiteFor({ crc, value, expected, initial }) {
-  function getReferenceValueForBuffer(model, buffer, initial, callback) {
-    if (expected) return callback(null, expected);
-
-    initial = typeof initial !== 'undefined' ? `--xor-in=0x${initial.toString(16)}` : '';
-
+function getReferenceValueForBuffer(model, buffer, initial, expected, callback) {
+  if (expected) {
+    callback(null, expected);
+  } else {
+    const initialArg = typeof initial !== 'undefined' ? `--xor-in=0x${initial.toString(16)}` : '';
     const filename = `${__dirname}/tmp`;
-    const cmd = `pycrc.py --model=${model} ${initial} --check-file="${filename}"`;
+    const cmd = `pycrc.py --model=${model} ${initialArg} --check-file="${filename}"`;
 
     fs.writeFileSync(filename, buffer);
 
@@ -30,91 +29,99 @@ export default function crcSuiteFor({ crc, value, expected, initial }) {
       callback(err, (reference || '').replace(/^0x|\n$/g, ''));
     });
   }
+}
 
-  function getReferenceValueForString(model, string, initial, callback) {
-    if (expected) return callback(null, expected);
-
-    initial = typeof initial !== 'undefined' ? `--xor-in=0x${initial.toString(16)}` : '';
-    const cmd = `pycrc.py --model=${model} ${initial} --check-string="${string}"`;
-
-    exec(`${__dirname}/pycrc/${cmd}`, (err, reference) =>
-      callback(err, (reference || '').replace(/^0x|\n$/g, ''))
-    );
+function getReferenceValueForString(model, string, initial, expected, callback) {
+  if (expected) {
+    callback(null, expected);
+  } else {
+    const initialArg = typeof initial !== 'undefined' ? `--xor-in=0x${initial.toString(16)}` : '';
+    const cmd = `pycrc.py --model=${model} ${initialArg} --check-string="${string}"`;
+    exec(`${__dirname}/pycrc/${cmd}`, (err, reference) => callback(err, (reference || '').replace(/^0x|\n$/g, '')));
   }
+}
 
-  function testStringValue(string, initial, callback) {
-    getReferenceValueForString(crc.model, string, initial, function(err, reference) {
-      if (err) return callback(err);
+function testStringValue(crc, string, initial, expected, callback) {
+  getReferenceValueForString(crc.model, string, initial, expected, (err, reference) => {
+    if (err) {
+      callback(err);
+    } else {
       crc(string, initial)
         .toString(16)
         .should.equal(reference);
       callback();
-    });
-  }
+    }
+  });
+}
 
-  function testBufferValue(buffer, initial, callback) {
-    getReferenceValueForBuffer(crc.model, buffer, initial, function(err, reference) {
-      if (err) return callback(err);
+function testBufferValue(crc, buffer, initial, expected, callback) {
+  getReferenceValueForBuffer(crc.model, buffer, initial, expected, (err, reference) => {
+    if (err) {
+      callback(err);
+    } else {
       crc(buffer, initial)
         .toString(16)
         .should.equal(reference);
       callback();
-    });
-  }
+    }
+  });
+}
 
-  function testStringSplitValue(value, initial, callback) {
-    const middle = value.length / 2;
-    const chunk1 = value.substr(0, middle);
-    const chunk2 = value.substr(middle);
-    const v1 = crc(chunk1, initial);
-    const v2 = crc(chunk2, v1);
+function testStringSplitValue(crc, value, initial, expected, callback) {
+  const middle = value.length / 2;
+  const chunk1 = value.substr(0, middle);
+  const chunk2 = value.substr(middle);
+  const v1 = crc(chunk1, initial);
+  const v2 = crc(chunk2, v1);
 
-    getReferenceValueForString(crc.model, value, initial, function(err, reference) {
-      if (err) return callback(err);
+  getReferenceValueForString(crc.model, value, initial, expected, (err, reference) => {
+    if (err) {
+      callback(err);
+    } else {
       v2.toString(16).should.equal(reference);
       callback();
-    });
-  }
+    }
+  });
+}
 
-  function testBufferSplitValue(value, initial, callback) {
-    const middle = value.length / 2;
-    const chunk1 = value.slice(0, middle);
-    const chunk2 = value.slice(middle);
-    const v1 = crc(chunk1, initial);
-    const v2 = crc(chunk2, v1);
+function testBufferSplitValue(crc, value, initial, expected, callback) {
+  const middle = value.length / 2;
+  const chunk1 = value.slice(0, middle);
+  const chunk2 = value.slice(middle);
+  const v1 = crc(chunk1, initial);
+  const v2 = crc(chunk2, v1);
 
-    getReferenceValueForBuffer(crc.model, value, initial, function(err, reference) {
-      if (err) return callback(err);
+  getReferenceValueForBuffer(crc.model, value, initial, expected, (err, reference) => {
+    if (err) {
+      callback(err);
+    } else {
       v2.toString(16).should.equal(reference);
       callback();
-    });
-  }
+    }
+  });
+}
 
+export default function crcSuiteFor({
+  crc, value, expected, initial,
+}) {
   if (value) {
     if (Buffer.isBuffer(value)) {
-      describe(`BUFFER: ${value.toString('base64')}`, function() {
-        it('should calculate a full checksum', done => testBufferValue(value, initial, done));
-        it('should calculate a checksum for multiple data', done =>
-          testBufferSplitValue(value, initial, done));
+      describe(`BUFFER: ${value.toString('base64')}`, () => {
+        it('should calculate a full checksum', (done) => testBufferValue(crc, value, initial, expected, done));
+        it('should calculate a checksum for multiple data', (done) => testBufferSplitValue(crc, value, initial, expected, done));
       });
     } else {
-      describe(`STRING: ${value}`, function() {
-        it('should calculate a full checksum', done => testStringValue(value, initial, done));
-        it('should calculate a checksum for multiple data', done =>
-          testStringSplitValue(value, initial, done));
+      describe(`STRING: ${value}`, () => {
+        it('should calculate a full checksum', (done) => testStringValue(crc, value, initial, expected, done));
+        it('should calculate a checksum for multiple data', (done) => testStringSplitValue(crc, value, initial, expected, done));
       });
     }
   } else {
-    VALUES.forEach(value =>
-      describe(`STRING: ${value}`, function() {
-        it('should calculate a full checksum', done => testStringValue(value, initial, done));
-        it('should calculate a full checksum with initial 0x0', done =>
-          testStringValue(value, 0, done));
-        it('should calculate a checksum for multiple data', done =>
-          testStringSplitValue(value, initial, done));
-        it('should calculate a checksum for multiple data with initial 0x0', done =>
-          testStringSplitValue(value, 0, done));
-      })
-    );
+    TEST_VALUES.forEach((testValue) => describe(`STRING: ${testValue}`, () => {
+      it('should calculate a full checksum', (done) => testStringValue(crc, testValue, initial, expected, done));
+      it('should calculate a full checksum with initial 0x0', (done) => testStringValue(crc, testValue, 0, expected, done));
+      it('should calculate a checksum for multiple data', (done) => testStringSplitValue(crc, testValue, initial, expected, done));
+      it('should calculate a checksum for multiple data with initial 0x0', (done) => testStringSplitValue(crc, testValue, 0, expected, done));
+    }));
   }
 }

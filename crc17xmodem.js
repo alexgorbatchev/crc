@@ -2,8 +2,8 @@ import { Buffer } from 'buffer';
 import createBuffer from './create_buffer';
 import defineCrc from './define_crc';
 
-const crc16xmodem = defineCrc('xmodem', function(buf, previous) {
-  if (!Buffer.isBuffer(buf)) buf = createBuffer(buf);
+const crc16xmodem = defineCrc('xmodem', (value, previous) => {
+  const buf = Buffer.isBuffer(value) ? value : createBuffer(value);
 
   let crc = typeof previous !== 'undefined' ? ~~previous : 0x0;
 

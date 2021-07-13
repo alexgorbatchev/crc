@@ -11,4 +11,8 @@ module.exports = {
     node: true,
     es6: true,
   },
+  rules: {
+    'no-bitwise': 'off',
+    'no-plusplus': 'off',
+  },
 };

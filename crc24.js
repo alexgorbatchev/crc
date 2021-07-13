@@ -36,13 +36,13 @@ let TABLE = [
   0x26359f, 0xa07964, 0xace092, 0x2aac69, 0xb5d37e, 0x339f85, 0x3f0673, 0xb94a88,
   0x87b4a6, 0x01f85d, 0x0d61ab, 0x8b2d50, 0x145247, 0x921ebc, 0x9e874a, 0x18cbb1,
   0xe37b16, 0x6537ed, 0x69ae1b, 0xefe2e0, 0x709df7, 0xf6d10c, 0xfa48fa, 0x7c0401,
-  0x42fa2f, 0xc4b6d4, 0xc82f22, 0x4e63d9, 0xd11cce, 0x575035, 0x5bc9c3, 0xdd8538
-]
+  0x42fa2f, 0xc4b6d4, 0xc82f22, 0x4e63d9, 0xd11cce, 0x575035, 0x5bc9c3, 0xdd8538,
+];
 
 if (typeof Int32Array !== 'undefined') TABLE = new Int32Array(TABLE);
 
-const crc24 = defineCrc('crc-24', function(buf, previous) {
-  if (!Buffer.isBuffer(buf)) buf = createBuffer(buf);
+const crc24 = defineCrc('crc-24', (value, previous) => {
+  const buf = Buffer.isBuffer(value) ? value : createBuffer(value);
 
   let crc = typeof previous !== 'undefined' ? ~~previous : 0xb704ce;
 

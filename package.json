@@ -28,17 +28,18 @@
     "beautify-benchmark": "^0.2.4",
     "benchmark": "^2.1.4",
     "buffer-crc32": "^0.2.13",
-    "chai": "^4.1.2",
-    "eslint": "^5.1.0",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-prettier": "^2.6.2",
-    "eslint-plugin-react": "^7.10.0",
-    "mocha": "^5.2.0",
-    "prettier": "^1.13.7",
-    "seedrandom": "^2.4.3"
+    "chai": "^4.3.4",
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "mocha": "^9.0.2",
+    "prettier": "^2.3.2",
+    "seedrandom": "^3.0.5",
+    "typescript": "^4.3.5"
   },
   "homepage": "https://github.com/alexgorbatchev/node-crc",
   "bugs": "https://github.com/alexgorbatchev/node-crc/issues",
@@ -48,6 +49,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "buffer": "^5.1.0"
+    "buffer": "^6.0.3"
   }
 }

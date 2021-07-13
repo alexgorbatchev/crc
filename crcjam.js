@@ -68,13 +68,13 @@ let TABLE = [
   0xbdbdf21c, 0xcabac28a, 0x53b39330, 0x24b4a3a6,
   0xbad03605, 0xcdd70693, 0x54de5729, 0x23d967bf,
   0xb3667a2e, 0xc4614ab8, 0x5d681b02, 0x2a6f2b94,
-  0xb40bbe37, 0xc30c8ea1, 0x5a05df1b, 0x2d02ef8d
+  0xb40bbe37, 0xc30c8ea1, 0x5a05df1b, 0x2d02ef8d,
 ];
 
 if (typeof Int32Array !== 'undefined') TABLE = new Int32Array(TABLE);
 
-const crcjam = defineCrc('jam', function(buf, previous = -1) {
-  if (!Buffer.isBuffer(buf)) buf = createBuffer(buf);
+const crcjam = defineCrc('jam', (value, previous = -1) => {
+  const buf = Buffer.isBuffer(value) ? value : createBuffer(value);
 
   let crc = previous === 0 ? 0 : ~~previous;
 

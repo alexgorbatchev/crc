@@ -1,10 +1,10 @@
 import chai from 'chai';
 
-import { crc32 as crc32mod, crc16kermit as crc16kermit_mod } from '..';
+import { crc32 as crc32mod, crc16kermit as crc16kermitMod } from '..';
 import crc32src from '../crc32';
 import crc32lib from '../lib/es6/crc32';
-import crc16kermit_src from '../crc16kermit';
-import crc16kermit_lib from '../lib/es6/crc16kermit';
+import crc16kermitSrc from '../crc16kermit';
+import crc16kermitLib from '../lib/es6/crc16kermit';
 
 chai.should();
 
@@ -14,7 +14,7 @@ describe('Module imports', () => {
       crc32mod('1234567890').should.equal(crc32src('1234567890'));
     });
     it('crc16kermit', () => {
-      crc16kermit_mod('1234567890').should.equal(crc16kermit_src('1234567890'));
+      crc16kermitMod('1234567890').should.equal(crc16kermitSrc('1234567890'));
     });
   });
 
@@ -23,7 +23,7 @@ describe('Module imports', () => {
       crc32mod('1234567890').should.equal(crc32lib('1234567890'));
     });
     it('crc16kermit', () => {
-      crc16kermit_mod('1234567890').should.equal(crc16kermit_lib('1234567890'));
+      crc16kermitMod('1234567890').should.equal(crc16kermitLib('1234567890'));
     });
   });
 });
