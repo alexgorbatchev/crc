@@ -14,7 +14,7 @@
   "scripts": {
     "lint": "eslint *.js test/{,**/}*.js",
     "test": "npm run lint && mocha test/*.test.js && ./webpack-test/test.sh",
-    "build": "rm -fr lib; babel --out-dir ./lib/es6 *.js; cd commonjs; babel --out-dir ../lib *.js",
+    "build": "./scripts/build",
     "pretest": "npm run build"
   },
   "author": {

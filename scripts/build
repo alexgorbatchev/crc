@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rm -fr lib
+tsc -p tsconfig-lib.json
+tsc -p tsconfig-root.json
+cp -R ./commonjs/* ./lib/
