@@ -1,2 +1,10 @@
 node_modules
-tsconfig-root.tsbuildinfo
+*.tsbuildinfo
+crc*.js
+index.js
+define_crc.js
+create_buffer.js
+types.js
+*.d.ts
+lib
+calculators

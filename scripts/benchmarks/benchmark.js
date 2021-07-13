@@ -3,9 +3,9 @@ const benchmark = require('benchmark');
 const benchmarks = require('beautify-benchmark');
 const seedrandom = require('seedrandom');
 
-const getBuffer = size => {
+const getBuffer = (size) => {
   const buffer = Buffer.alloc(size);
-  const rng = seedrandom('body ' + size);
+  const rng = seedrandom(`body ${size}`);
 
   for (let i = 0; i < buffer.length - 1; i++) {
     buffer[i] = (rng() * 94 + 32) | 0;
@@ -14,16 +14,16 @@ const getBuffer = size => {
   return buffer;
 };
 
-global.crc = require('../lib');
+global.crc = require('../../lib');
 global.bufferCRC32 = require('buffer-crc32');
 
 const suite = new benchmark.Suite();
 suite.on('start', () => process.stdout.write('Working...\n\n'));
-suite.on('cycle', e => benchmarks.add(e.target));
+suite.on('cycle', (e) => benchmarks.add(e.target));
 suite.on('complete', () => benchmarks.log());
 
 module.exports = {
-  getBuffer: getBuffer,
+  getBuffer,
   add() {
     return suite.add(...arguments);
   },

@@ -1,5 +1,8 @@
 {
-  "favorites.sortDirection": "ASC",
-  "favorites.groupsFirst": true,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "[javascript]": {
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  }
 }

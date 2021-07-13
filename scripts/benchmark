@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd ./scripts/benchmarks
+
+node ./crc32-100b.js
+node ./crc32-1kb.js
+node ./crc32-5kb.js
+node ./crc32-100kb.js
+node ./crc32-1mb.js

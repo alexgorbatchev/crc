@@ -13,13 +13,17 @@
   "module": "./index.js",
   "scripts": {
     "lint": "eslint *.js test/{,**/}*.js",
-    "test": "npm run lint && mocha test/*.test.js && ./webpack-test/test.sh",
+    "test": "mocha test/*.test.js && ./webpack-test/test.sh",
     "build": "./scripts/build",
+    "benchmark": "./scripts/benchmark",
     "pretest": "npm run build"
   },
   "author": {
     "name": "Alex Gorbatchev",
     "url": "https://github.com/alexgorbatchev"
+  },
+  "peerDependencies": {
+    "buffer": "^6.0.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -47,8 +51,5 @@
     "type": "git",
     "url": "git://github.com/alexgorbatchev/node-crc.git"
   },
-  "license": "MIT",
-  "dependencies": {
-    "buffer": "^6.0.3"
-  }
+  "license": "MIT"
 }
