@@ -37,8 +37,7 @@ const crc16ccitt = defineCrc('ccitt', (value, previous) => {
   let crc = typeof previous !== 'undefined' ? ~~previous : 0xffff;
 
   for (let index = 0; index < buf.length; index++) {
-    const byte = buf[index];
-    crc = (TABLE[((crc >> 8) ^ byte) & 0xff] ^ (crc << 8)) & 0xffff;
+    crc = (TABLE[((crc >> 8) ^ buf[index]) & 0xff] ^ (crc << 8)) & 0xffff;
   }
 
   return crc;

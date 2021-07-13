@@ -8,8 +8,7 @@ const crc1 = defineCrc('crc1', (value, previous) => {
   let accum = 0;
 
   for (let index = 0; index < buf.length; index++) {
-    const byte = buf[index];
-    accum += byte;
+    accum += buf[index];
   }
 
   crc += accum % 256;

@@ -37,8 +37,7 @@ const crc16 = defineCrc('crc-16', (value, previous) => {
   let crc = ~~previous;
 
   for (let index = 0; index < buf.length; index++) {
-    const byte = buf[index];
-    crc = (TABLE[(crc ^ byte) & 0xff] ^ (crc >> 8)) & 0xffff;
+    crc = (TABLE[(crc ^ buf[index]) & 0xff] ^ (crc >> 8)) & 0xffff;
   }
 
   return crc;

@@ -37,8 +37,7 @@ const crc16modbus = defineCrc('crc-16-modbus', (value, previous) => {
   let crc = typeof previous !== 'undefined' ? ~~previous : 0xffff;
 
   for (let index = 0; index < buf.length; index++) {
-    const byte = buf[index];
-    crc = (TABLE[(crc ^ byte) & 0xff] ^ (crc >> 8)) & 0xffff;
+    crc = (TABLE[(crc ^ buf[index]) & 0xff] ^ (crc >> 8)) & 0xffff;
   }
 
   return crc;
