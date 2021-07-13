@@ -1,21 +1,10 @@
-import { Buffer } from 'buffer';
+import createBuffer from './create_buffer';
+import { CRCCalculator, CRCModule } from './types';
 
-export type BufferInput = string | ArrayBuffer | Uint8Array | Buffer | any[];
+export default function defineCrc(model: string, calculator: CRCCalculator<Uint8Array>) {
+  const result: CRCModule = (value, previous) => calculator(createBuffer(value), previous) >>> 0;
 
-export interface CRCCalculator {
-  (value: BufferInput, previous: number): number;
-}
-
-export interface CRCModule extends CRCCalculator {
-  signed: CRCCalculator;
-  unsigned: CRCCalculator;
-  model: string;
-}
-
-export default function defineCrc(model: string, calculator: CRCCalculator) {
-  const result: CRCModule = (value, previous) => calculator(value, previous) >>> 0;
-
-  result.signed = calculator;
+  result.signed = (value, previous) => calculator(createBuffer(value), previous);
   result.unsigned = result;
   result.model = model;
 

@@ -1,5 +1,5 @@
 import { Buffer } from 'buffer';
-import { BufferInput } from './define_crc';
+import { BufferInput } from './types';
 
 const createBuffer =
   Buffer.hasOwnProperty('from') &&

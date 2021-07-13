@@ -1,18 +1,4 @@
-import createBuffer from './create_buffer';
+import crc1 from './calculators/crc1';
 import defineCrc from './define_crc';
 
-const crc1 = defineCrc('crc1', (value, previous) => {
-  const buf = createBuffer(value);
-  let crc = ~~previous;
-  let accum = 0;
-
-  for (let index = 0; index < buf.length; index++) {
-    accum += buf[index];
-  }
-
-  crc += accum % 256;
-
-  return crc % 256;
-});
-
-export default crc1;
+export default defineCrc('crc1', crc1);

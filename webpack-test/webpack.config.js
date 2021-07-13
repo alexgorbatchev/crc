@@ -1,8 +1,11 @@
 module.exports = {
-  entry: `${__dirname}/index.js`,
+  entry: {
+    'with-array': `${__dirname}/with-array.js`,
+    'with-buffer': `${__dirname}/with-buffer.js`,
+  },
   output: {
     path: __dirname,
-    filename: 'output.js',
+    filename: 'output/[name].js',
   },
   mode: 'development',
   target: 'web',
