@@ -1,6 +1,6 @@
 import { Buffer } from 'buffer';
 
-export type BufferInput = string | ArrayBuffer | Buffer | any[];
+export type BufferInput = string | ArrayBuffer | Buffer;
 
 export interface CRCCalculator<T = BufferInput | Uint8Array> {
   (value: T, previous?: number): number;

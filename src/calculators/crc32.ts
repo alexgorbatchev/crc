@@ -41,6 +41,7 @@ if (typeof Int32Array !== 'undefined') {
 }
 
 const crc32: CRCCalculator<Uint8Array> = (current, previous) => {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   let crc = previous === 0 ? 0 : ~~previous! ^ -1;
 
   for (let index = 0; index < current.length; index++) {

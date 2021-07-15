@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable no-prototype-builtins */
 import { Buffer } from 'buffer';
 import { BufferInput } from './types';
 

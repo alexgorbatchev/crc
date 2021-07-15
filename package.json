@@ -2,53 +2,71 @@
   "name": "crc",
   "version": "3.8.0",
   "description": "Module for calculating Cyclic Redundancy Check (CRC) for Node.js and the Browser.",
-  "keywords": [
-    "crc"
-  ],
-  "files": [
-    "lib",
-    "*.js"
-  ],
-  "main": "./lib/index.js",
-  "module": "./index.js",
-  "typings": "./index.d.ts",
-  "scripts": {
-    "lint": "eslint *.js test/{,**/}*.js",
-    "test": "npm run build && mocha test/*.test.js && ./webpack-test/test.sh",
-    "build": "./scripts/build",
-    "benchmark": "./scripts/benchmark"
-  },
   "author": {
     "name": "Alex Gorbatchev",
     "url": "https://github.com/alexgorbatchev"
   },
+  "homepage": "https://github.com/alexgorbatchev/node-crc",
+  "bugs": "https://github.com/alexgorbatchev/node-crc/issues",
+  "repository": "alexgorbatchev/node-crc",
+  "license": "MIT",
+  "keywords": [
+    "crc",
+    "crc16ccitt",
+    "crc16kermit",
+    "crc16modbus",
+    "crc16",
+    "crc16xmodem",
+    "crc1",
+    "crc24",
+    "crc32",
+    "crc81wire",
+    "crc8",
+    "crcjam"
+  ],
+  "main": "./lib/index.js",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=12"
+  },
+  "files": [
+    "lib",
+    "*.js",
+    "*.d.ts"
+  ],
+  "scripts": {
+    "lint": "eslint src/{,**/}*.ts test/{,**/}*.ts",
+    "test": "npm run build && mocha test/*.test.ts && npm run lint && ./webpack-test/test.sh",
+    "build": "./scripts/build",
+    "benchmark": "./scripts/benchmark"
+  },
   "peerDependencies": {
-    "buffer": "^6.0.3"
+    "buffer": ">=6.0.3"
   },
   "devDependencies": {
     "@types/chai": "^4.2.21",
     "@types/mocha": "^8.2.3",
+    "@types/prettier": "^2.2.3",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
     "beautify-benchmark": "^0.2.4",
     "benchmark": "^2.1.4",
     "buffer-crc32": "^0.2.13",
     "chai": "^4.3.4",
-    "eslint": "^7.30.0",
-    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-config-typescript": "^3.0.0",
+    "eslint-formatter-pretty": "^4.0.0",
     "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-no-only-tests": "^2.6.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "eslint": "^7.30.0",
     "mocha": "^9.0.2",
     "prettier": "^2.3.2",
     "seedrandom": "^3.0.5",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5"
-  },
-  "homepage": "https://github.com/alexgorbatchev/node-crc",
-  "bugs": "https://github.com/alexgorbatchev/node-crc/issues",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/alexgorbatchev/node-crc.git"
-  },
-  "license": "MIT"
+  }
 }

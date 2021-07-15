@@ -145,7 +145,7 @@ interface Params {
   initial?: number;
 }
 
-export default function crcSuiteFor({ crc, value, expected, initial }: Params) {
+export default function crcSuiteFor({ crc, value, expected, initial }: Params): void {
   if (value) {
     if (Buffer.isBuffer(value)) {
       describe(`BUFFER: ${value.toString('base64')}`, () => {

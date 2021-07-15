@@ -1,8 +1,10 @@
 {
   "editor.formatOnSave": true,
   "eslint.format.enable": true,
-  "[javascript]": {
-    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[json]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   }
 }

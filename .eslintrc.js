@@ -1,7 +1,15 @@
 module.exports = {
   root: true,
-  extends: ['prettier', 'airbnb', 'eslint:recommended'],
-  plugins: ['prettier'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint', 'import'],
+  extends: [
+    'airbnb-base',
+    'prettier',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
+  ],
   parserOptions: {
     ecmaVersion: 2017,
     sourceType: 'module',
@@ -14,5 +22,6 @@ module.exports = {
   rules: {
     'no-bitwise': 'off',
     'no-plusplus': 'off',
+    'import/extensions': 'off',
   },
 };
