@@ -1,6 +1,6 @@
 import { CRCCalculator } from '../types';
 
-const crc1: CRCCalculator<Uint8Array> = (current, previous) => {
+const crc1: CRCCalculator<Uint8Array> = (current, previous = 0) => {
   let crc = ~~previous;
   let accum = 0;
 

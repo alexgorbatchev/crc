@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "allowJs": true /* Allow javascript files to be compiled. */,
+    "checkJs": true /* Report errors in .js files. */,
+
     "incremental": true,
     "declaration": true,
     "strict": true,

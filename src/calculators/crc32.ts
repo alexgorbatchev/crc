@@ -41,7 +41,7 @@ if (typeof Int32Array !== 'undefined') {
 }
 
 const crc32: CRCCalculator<Uint8Array> = (current, previous) => {
-  let crc = previous === 0 ? 0 : ~~previous ^ -1;
+  let crc = previous === 0 ? 0 : ~~previous! ^ -1;
 
   for (let index = 0; index < current.length; index++) {
     crc = TABLE[(crc ^ current[index]) & 0xff] ^ (crc >>> 8);

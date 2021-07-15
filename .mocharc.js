@@ -27,7 +27,7 @@ module.exports = {
   recursive: true,
   reporter: 'spec',
   // 'reporter-option': ['foo=bar', 'baz=quux'],
-  require: 'babel-core/register',
+  require: 'ts-node/register',
   // retries: 1,
   slow: '100',
   // sort: false,

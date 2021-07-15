@@ -6,9 +6,9 @@ const createBuffer =
   Buffer.hasOwnProperty('alloc') &&
   Buffer.hasOwnProperty('allocUnsafe') &&
   Buffer.hasOwnProperty('allocUnsafeSlow')
-    ? (value: BufferInput) => Buffer.from(value as any)
+    ? (value: BufferInput, encoding?: BufferEncoding) => Buffer.from(value as any, encoding)
     : // support for Node < 5.10
       // eslint-disable-next-line no-buffer-constructor
-      (value: BufferInput) => new Buffer(value as any);
+      (value: BufferInput, encoding?: BufferEncoding) => new Buffer(value as any, encoding);
 
 export default createBuffer;

@@ -24,7 +24,7 @@ if (typeof Int32Array !== 'undefined') {
   TABLE = new Int32Array(TABLE);
 }
 
-const crc8: CRCCalculator<Uint8Array> = (current, previous) => {
+const crc8: CRCCalculator<Uint8Array> = (current, previous = 0) => {
   let crc = ~~previous;
 
   for (let index = 0; index < current.length; index++) {

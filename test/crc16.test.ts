@@ -1,6 +1,6 @@
 import crcSuiteFor from './test_helpers';
-import crc16 from '../lib/es6/crc16';
-import createBuffer from '../lib/es6/create_buffer';
+import crc16 from '../src/crc16';
+import createBuffer from '../src/create_buffer';
 
 describe('CRC16', () => {
   crcSuiteFor({ crc: crc16 });

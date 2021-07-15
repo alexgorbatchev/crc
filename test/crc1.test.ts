@@ -1,5 +1,5 @@
 import crcSuiteFor from './test_helpers';
-import crc1 from '../lib/es6/crc1';
+import crc1 from '../src/crc1';
 
 describe('CRC1', () => {
   crcSuiteFor({
