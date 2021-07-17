@@ -1,0 +1,11 @@
+{
+  "name": "crc-webpack-test",
+  "version": "1.0.0",
+  "private": true,
+  "sideEffects": false,
+  "devDependencies": {
+    "webpack": "^4.16.0",
+    "webpack-command": "^0.4.1",
+    "crc": "*"
+  }
+}

@@ -1,0 +1,4 @@
+#!/bin/bash -e
+
+npm run build
+$(npm bin)/mocha test/*.test.ts

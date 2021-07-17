@@ -8,3 +8,4 @@ types.js
 *.d.ts
 lib
 calculators
+test/dependency
