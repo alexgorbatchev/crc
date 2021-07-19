@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
 npm link .
+npm run build
 
 ./scripts/test-crc
 ./scripts/test-webpack
