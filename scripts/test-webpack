@@ -4,8 +4,10 @@ cd test/webpack
 
 if [ ! -d node_modules ]; then
   npm install
-  npm link crc
 fi
+
+rm -fr ./output
+npm link crc
 
 $(npm bin)/webpack --mode=production
 
