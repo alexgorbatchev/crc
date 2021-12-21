@@ -54,14 +54,6 @@ crc32(helloWorld).toString(16);
 // "3610a686"
 ```
 
-Or use CommonJS (compatability mode, no longer recommended):
-
-```js
-const { crc32 } = require('crc');
-crc32('hello').toString(16);
-// "3610a686"
-```
-
 Calculate a CRC32 of a file:
 
 ```js
@@ -85,10 +77,6 @@ value = crc32('three', value);
 value.toString(16);
 // "9e1c092"
 ```
-
-# Important: Node >= 6.3.0 < 6.9.2
-
-There's was a bug in Node [#9342](https://github.com/nodejs/node/issues/9342) that affected CRC calculation if `Buffer.split()` is used (see issue discussion for details). This affected all version starting from `6.3.0` up to but not including `6.9.2`. The patch [#9341](https://github.com/nodejs/node/pull/9341) was released in `6.9.2`. If you are upgrading and seeing odd CRC calculation mismatches, this might be the reason.
 
 ## Running tests
 
