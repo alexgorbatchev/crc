@@ -4,8 +4,8 @@
   "private": true,
   "sideEffects": false,
   "devDependencies": {
+    "crc": "*",
     "webpack": "^4.16.0",
-    "webpack-command": "^0.4.1",
-    "crc": "*"
+    "webpack-command": "^0.4.1"
   }
 }
