@@ -1,10 +1,16 @@
 #!/bin/bash -e
 
 cd test
-git clone https://github.com/christsim/multicoin-address-validator.git ./dependency
+
+if [ ! -d ./dependency ]; then
+  (
+    git clone https://github.com/christsim/multicoin-address-validator.git ./dependency
+    cd dependency
+    git checkout f8f3626f441c0d53fdc3b89678629dc1d33c0546
+  )
+fi
 
 cd dependency
-git checkout f8f3626f441c0d53fdc3b89678629dc1d33c0546
 
 if [ ! -d node_modules ]; then
   npm install
