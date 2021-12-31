@@ -1,6 +1,6 @@
 {
   "name": "crc",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Module for calculating Cyclic Redundancy Check (CRC) for Node.js and the Browser.",
   "author": {
     "name": "Alex Gorbatchev",
