@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "lib": ["es2020", "dom"],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "outDir": "./.build",
+    "resolveJsonModule": true,
+    "strict": true,
+    "target": "ES5"
+  }
+}

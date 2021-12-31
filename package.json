@@ -1,47 +1,11 @@
 {
   "name": "crc",
-  "version": "4.0.0",
-  "description": "Module for calculating Cyclic Redundancy Check (CRC) for Node.js and the Browser.",
-  "author": {
-    "name": "Alex Gorbatchev",
-    "url": "https://github.com/alexgorbatchev"
-  },
-  "homepage": "https://github.com/alexgorbatchev/node-crc",
-  "bugs": "https://github.com/alexgorbatchev/node-crc/issues",
-  "repository": "alexgorbatchev/node-crc",
-  "license": "MIT",
-  "keywords": [
-    "crc",
-    "crc16ccitt",
-    "crc16kermit",
-    "crc16modbus",
-    "crc16",
-    "crc16xmodem",
-    "crc1",
-    "crc24",
-    "crc32",
-    "crc81wire",
-    "crc8",
-    "crcjam"
-  ],
-  "main": "./lib/index.js",
-  "module": "./index.js",
-  "types": "./index.d.ts",
-  "sideEffects": false,
-  "engines": {
-    "node": ">=12"
-  },
-  "files": [
-    "lib",
-    "*.js",
-    "*.d.ts"
-  ],
+  "private": "true",
   "scripts": {
     "lint": "eslint src/{,**/}*.ts test/{,**/}*.ts",
     "test": "./scripts/test",
     "build": "./scripts/build",
-    "benchmark": "./scripts/benchmark",
-    "prepack": "./scripts/prepack"
+    "benchmark": "./scripts/benchmark"
   },
   "peerDependencies": {
     "buffer": ">=6.0.3"
@@ -49,6 +13,7 @@
   "devDependencies": {
     "@types/chai": "^4.3.0",
     "@types/mocha": "^9.0.0",
+    "@types/node": "^17.0.5",
     "@types/prettier": "^2.4.2",
     "@typescript-eslint/eslint-plugin": "^5.8.0",
     "@typescript-eslint/parser": "^5.8.0",
@@ -68,6 +33,6 @@
     "prettier": "^2.5.1",
     "seedrandom": "^3.0.5",
     "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+    "typescript": "^4.6.0-dev.20211231"
   }
 }

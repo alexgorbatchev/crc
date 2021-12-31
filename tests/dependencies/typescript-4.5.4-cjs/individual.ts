@@ -1,0 +1,23 @@
+import crc16ccitt from 'crc/crc16ccitt';
+import crc16kermit from 'crc/crc16kermit';
+import crc16modbus from 'crc/crc16modbus';
+import crc16 from 'crc/crc16';
+import crc16xmodem from 'crc/crc16xmodem';
+import crc1 from 'crc/crc1';
+import crc24 from 'crc/crc24';
+import crc32 from 'crc/crc32';
+import crc81wire from 'crc/crc81wire';
+import crc8 from 'crc/crc8';
+import crcjam from 'crc/crcjam';
+
+crc16ccitt('hello world');
+crc16kermit('hello world');
+crc16modbus('hello world');
+crc16('hello world');
+crc16xmodem('hello world');
+crc1('hello world');
+crc24('hello world');
+crc32('hello world');
+crc81wire('hello world');
+crc8('hello world');
+crcjam('hello world');

@@ -1,11 +1,2 @@
 node_modules
 *.tsbuildinfo
-crc*.js
-index.js
-define_crc.js
-create_buffer.js
-types.js
-*.d.ts
-lib
-calculators
-test/dependency

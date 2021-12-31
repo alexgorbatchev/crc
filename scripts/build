@@ -1,6 +1,24 @@
 #!/bin/bash
 
-rm -fr lib
-tsc -p tsconfig-lib.json
-tsc -p tsconfig-root.json
-cp -R ./scripts/commonjs/* ./lib/
+rm -fr dist/cjs
+rm -fr dist/mjs
+tsc -p tsconfig-cjs.json
+tsc -p tsconfig-mjs.json
+tsc -p tsconfig-declarations.json
+rm dist/cjs/*.d.ts
+rm dist/cjs/calculators/*.d.ts
+
+cp LICENSE ./dist
+cp README.md ./dist
+
+cat >dist/cjs/package.json <<!EOF
+{
+    "type": "commonjs"
+}
+!EOF
+
+cat >dist/mjs/package.json <<!EOF
+{
+    "type": "module"
+}
+!EOF

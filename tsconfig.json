@@ -1,16 +1,18 @@
 {
   "compilerOptions": {
-    "allowJs": true /* Allow javascript files to be compiled. */,
-    "checkJs": true /* Report errors in .js files. */,
-
+    "allowJs": true,
+    "checkJs": true,
     "declaration": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "moduleResolution": "node",
     "esModuleInterop": true,
-    "inlineSourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSourceMap": false,
+    "module": "nodenext",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  }
+    "strict": true,
+    "strictNullChecks": true
+  },
+  "include": ["src/*"],
+  "exclude": ["node_modules"]
 }

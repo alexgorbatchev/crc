@@ -1,4 +1,4 @@
-import { CRCCalculator } from '../types';
+import { CRCCalculator } from '../types.js';
 
 const crc16xmodem: CRCCalculator<Uint8Array> = (current, previous) => {
   let crc = typeof previous !== 'undefined' ? ~~previous : 0x0;

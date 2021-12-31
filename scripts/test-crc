@@ -1,3 +1,6 @@
 #!/bin/bash -e
 
-$(npm bin)/mocha test/*.test.ts
+npm exec tsc -- -p tsconfig-tests.json
+
+TS_NODE_PROJECT=./tests/tsconfig.json \
+  $(npm bin)/mocha tests/*.test.ts

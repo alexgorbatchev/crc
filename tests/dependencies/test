@@ -1,0 +1,19 @@
+#!/bin/bash -e
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+cd $SCRIPT_DIR
+
+for d in *
+do
+  if [ -d "$d" ]; then
+    echo "Testing: $d"
+    (
+      cd $d
+      npm install --no-progress 1>/dev/null
+      npm install ../../../dist/$(cd ../../../dist && ls crc-*.tgz) --no-progress --no-save 1>/dev/null
+      npm test
+    )
+    echo "👍 PASSED"
+  fi
+done

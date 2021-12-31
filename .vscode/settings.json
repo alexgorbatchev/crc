@@ -2,9 +2,10 @@
   "editor.formatOnSave": true,
   "eslint.format.enable": true,
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  }
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

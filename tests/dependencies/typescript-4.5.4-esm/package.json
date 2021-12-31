@@ -1,0 +1,12 @@
+{
+  "name": "crc-test",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "4.5.4"
+  },
+  "scripts": {
+    "test": "./test"
+  }
+}

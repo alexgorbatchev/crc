@@ -1,0 +1,23 @@
+import crc16ccitt from 'crc/calculators/crc16ccitt';
+import crc16kermit from 'crc/calculators/crc16kermit';
+import crc16modbus from 'crc/calculators/crc16modbus';
+import crc16 from 'crc/calculators/crc16';
+import crc16xmodem from 'crc/calculators/crc16xmodem';
+import crc1 from 'crc/calculators/crc1';
+import crc24 from 'crc/calculators/crc24';
+import crc32 from 'crc/calculators/crc32';
+import crc81wire from 'crc/calculators/crc81wire';
+import crc8 from 'crc/calculators/crc8';
+import crcjam from 'crc/calculators/crcjam';
+
+crc16ccitt(new TextEncoder().encode('hello world'));
+crc16kermit(new TextEncoder().encode('hello world'));
+crc16modbus(new TextEncoder().encode('hello world'));
+crc16(new TextEncoder().encode('hello world'));
+crc16xmodem(new TextEncoder().encode('hello world'));
+crc1(new TextEncoder().encode('hello world'));
+crc24(new TextEncoder().encode('hello world'));
+crc32(new TextEncoder().encode('hello world'));
+crc81wire(new TextEncoder().encode('hello world'));
+crc8(new TextEncoder().encode('hello world'));
+crcjam(new TextEncoder().encode('hello world'));

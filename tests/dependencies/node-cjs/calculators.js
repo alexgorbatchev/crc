@@ -1,0 +1,23 @@
+const crc16ccitt = require('crc/calculators/crc16ccitt');
+const crc16kermit = require('crc/calculators/crc16kermit');
+const crc16modbus = require('crc/calculators/crc16modbus');
+const crc16 = require('crc/calculators/crc16');
+const crc16xmodem = require('crc/calculators/crc16xmodem');
+const crc1 = require('crc/calculators/crc1');
+const crc24 = require('crc/calculators/crc24');
+const crc32 = require('crc/calculators/crc32');
+const crc81wire = require('crc/calculators/crc81wire');
+const crc8 = require('crc/calculators/crc8');
+const crcjam = require('crc/calculators/crcjam');
+
+crc16ccitt(new TextEncoder().encode('hello world'));
+crc16kermit(new TextEncoder().encode('hello world'));
+crc16modbus(new TextEncoder().encode('hello world'));
+crc16(new TextEncoder().encode('hello world'));
+crc16xmodem(new TextEncoder().encode('hello world'));
+crc1(new TextEncoder().encode('hello world'));
+crc24(new TextEncoder().encode('hello world'));
+crc32(new TextEncoder().encode('hello world'));
+crc81wire(new TextEncoder().encode('hello world'));
+crc8(new TextEncoder().encode('hello world'));
+crcjam(new TextEncoder().encode('hello world'));

@@ -1,5 +1,0 @@
-#!/bin/bash
-
-git clean -f -d -X
-npm install
-./scripts/build

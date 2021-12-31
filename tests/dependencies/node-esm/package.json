@@ -1,0 +1,9 @@
+{
+  "name": "crc-test",
+  "version": "1.0.0",
+  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "test": "./test"
+  }
+}

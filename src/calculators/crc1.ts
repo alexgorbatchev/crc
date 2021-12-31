@@ -1,4 +1,4 @@
-import { CRCCalculator } from '../types';
+import { CRCCalculator } from '../types.js';
 
 const crc1: CRCCalculator<Uint8Array> = (current, previous = 0) => {
   let crc = ~~previous;

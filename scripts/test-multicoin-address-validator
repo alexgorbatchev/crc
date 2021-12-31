@@ -1,0 +1,23 @@
+#!/bin/bash -e
+
+cd tests
+
+if [ ! -d ./multicoin-address-validator ]; then
+  (
+    git clone https://github.com/christsim/multicoin-address-validator.git ./multicoin-address-validator
+    cd multicoin-address-validator
+    git checkout f8f3626f441c0d53fdc3b89678629dc1d33c0546
+  )
+fi
+
+cd multicoin-address-validator
+
+if [ ! -d node_modules ]; then
+  npm install
+fi
+
+npm install ../../dist
+
+$(npm bin)/mocha --config=../.mocharc-multicoin-address-validator.js test
+
+echo "👍 multicoin-address-validator tests okay!"

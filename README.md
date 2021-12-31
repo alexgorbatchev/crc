@@ -5,9 +5,9 @@ Functions for calculating Cyclic Redundancy Checks (CRC) values for the Node.js 
 ## Features
 
 - Written in TypeScript and provides typings out of the box.
+- Supports ESM and CommonJS.
 - Pure JavaScript implementation, no native dependencies.
 - Full test suite using `pycrc` as a refenrence.
-- ES6 modules.
 - Supports for the following CRC algorithms:
   - CRC1 (`crc1`)
   - CRC8 (`crc8`)
@@ -29,7 +29,7 @@ npm install crc
 
 ## Usage
 
-Calculate a CRC32 (recommended way):
+Using specific CRC is the recommended way to reduce bundle size:
 
 ```js
 import crc32 from 'crc/crc32';
@@ -37,7 +37,7 @@ crc32('hello').toString(16);
 // "3610a686"
 ```
 
-Import everything (this will increase bundle size if a bundler is used):
+Alternatively you can use main default export:
 
 ```js
 import crc from 'crc';
@@ -45,7 +45,7 @@ crc.crc32('hello').toString(16);
 // "3610a686"
 ```
 
-If you wish to minimize bundle size (meaning avoid `Buffer` being a dependency), you can import CRC calculators directly and pass an instance of `Int8Array` into it:
+If you really wish to minimize bundle size, you can import CRC calculators directly and pass an instance of `Int8Array`:
 
 ```js
 import crc32 from 'crc/calculators/crc32';
@@ -54,31 +54,39 @@ crc32(helloWorld).toString(16);
 // "3610a686"
 ```
 
+CommonJS is supported as well without the need to unwrap `.default`:
+
+```js
+const crc32 = require('crc/crc32');
+crc32('hello').toString(16);
+// "3610a686"
+```
+
 Calculate a CRC32 of a file:
 
 ```js
-crc32(fs.readFileSync('README.md', 'utf8')).toString(16);
+crc32(fs.readFileSync('README.md', 'utf-8')).toString(16);
 // "127ad531"
 ```
 
 Or using a `Buffer`:
 
 ```js
-crc32(fs.readFileSync('README.md', 'utf8')).toString(16);
+crc32(fs.readFileSync('README.md', 'utf-8')).toString(16);
 // "127ad531"
 ```
 
 Incrementally calculate a CRC:
 
 ```js
-value = crc32('one');
+let value = crc32('one');
 value = crc32('two', value);
 value = crc32('three', value);
 value.toString(16);
 // "9e1c092"
 ```
 
-## Running tests
+## Tests
 
 ```
 npm test

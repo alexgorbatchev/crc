@@ -1,8 +1,12 @@
 #!/bin/bash -e
 
-npm link .
 npm run build
 
+(
+  cd dist
+  npm pack
+)
+
 ./scripts/test-crc
-./scripts/test-webpack
-./scripts/test-dependency
+./scripts/test-multicoin-address-validator
+./tests/dependencies/test

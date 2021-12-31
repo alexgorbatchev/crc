@@ -1,0 +1,6 @@
+#!/bin/bash -e
+
+npm exec tsc
+node .build/individual.js
+node .build/calculators.js
+node .build/default.js

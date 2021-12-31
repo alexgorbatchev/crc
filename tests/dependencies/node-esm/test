@@ -1,0 +1,5 @@
+#!/bin/bash -e
+
+node default.js
+node individual.js
+node calculators.js

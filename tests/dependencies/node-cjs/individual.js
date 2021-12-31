@@ -1,0 +1,23 @@
+const crc16ccitt = require('crc/crc16ccitt');
+const crc16kermit = require('crc/crc16kermit');
+const crc16modbus = require('crc/crc16modbus');
+const crc16 = require('crc/crc16');
+const crc16xmodem = require('crc/crc16xmodem');
+const crc1 = require('crc/crc1');
+const crc24 = require('crc/crc24');
+const crc32 = require('crc/crc32');
+const crc81wire = require('crc/crc81wire');
+const crc8 = require('crc/crc8');
+const crcjam = require('crc/crcjam');
+
+crc16ccitt('hello world');
+crc16kermit('hello world');
+crc16modbus('hello world');
+crc16('hello world');
+crc16xmodem('hello world');
+crc1('hello world');
+crc24('hello world');
+crc32('hello world');
+crc81wire('hello world');
+crc8('hello world');
+crcjam('hello world');
