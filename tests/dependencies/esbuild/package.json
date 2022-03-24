@@ -1,0 +1,11 @@
+{
+  "name": "crc-test",
+  "version": "1.0.0",
+  "license": "ISC",
+  "scripts": {
+    "test": "./test"
+  },
+  "dependencies": {
+    "esbuild": "^0.14.27"
+  }
+}

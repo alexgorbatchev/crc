@@ -1,0 +1,3 @@
+#!/bin/bash -e
+
+npm exec -c 'esbuild --bundle index.js --outdir=output --minify --sourcemap'
