@@ -1,1 +1,3 @@
-require('../unwrap')(module, '../../cjs/calculators/crc24');
+const results = require('../../cjs/calculators/crc24').default;
+module.exports = results;
+module.exports.default = results;

@@ -1,1 +1,3 @@
-require('./unwrap')(module, '../cjs/crcjam');
+const results = require('../cjs/crcjam').default;
+module.exports = results;
+module.exports.default = results;

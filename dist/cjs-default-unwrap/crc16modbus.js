@@ -1,1 +1,3 @@
-require('./unwrap')(module, '../cjs/crc16modbus');
+const results = require('../cjs/crc16modbus').default;
+module.exports = results;
+module.exports.default = results;

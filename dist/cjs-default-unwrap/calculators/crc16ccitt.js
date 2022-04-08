@@ -1,1 +1,3 @@
-require('../unwrap')(module, '../../cjs/calculators/crc16ccitt');
+const results = require('../../cjs/calculators/crc16ccitt').default;
+module.exports = results;
+module.exports.default = results;

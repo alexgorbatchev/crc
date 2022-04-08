@@ -1,3 +1,4 @@
 #!/bin/bash -e
 
-npm exec -c 'esbuild --bundle index.js --outdir=output --minify --sourcemap'
+npm exec -c 'esbuild --bundle index-import.js --outdir=output --minify=false --sourcemap'
+npm exec -c "esbuild --bundle index-require.js --outdir=output --minify=false --sourcemap --platform=node --format=cjs"

@@ -1,0 +1,5 @@
+#!/bin/bash -e
+
+if npm exec -c 'rollup -c' | grep -q 'Unresolved dependencies'; then
+  exit 1
+fi

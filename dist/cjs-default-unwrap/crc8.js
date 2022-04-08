@@ -1,1 +1,3 @@
-require('./unwrap')(module, '../cjs/crc8');
+const results = require('../cjs/crc8').default;
+module.exports = results;
+module.exports.default = results;

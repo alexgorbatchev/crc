@@ -1,1 +1,3 @@
-require('./unwrap')(module, '../cjs/crc16kermit');
+const results = require('../cjs/crc16kermit').default;
+module.exports = results;
+module.exports.default = results;
