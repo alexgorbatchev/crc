@@ -1,6 +1,7 @@
 import crc1 from './crc1.js';
 import crc8 from './crc8.js';
 import crc81wire from './crc81wire.js';
+import crc8dvbs2 from './crc8dvbs2.js';
 import crc16 from './crc16.js';
 import crc16ccitt from './crc16ccitt.js';
 import crc16modbus from './crc16modbus.js';
@@ -13,6 +14,7 @@ import crcjam from './crcjam.js';
 export { crc1 };
 export { crc8 };
 export { crc81wire };
+export { crc8dvbs2 };
 export { crc16 };
 export { crc16ccitt };
 export { crc16modbus };
@@ -26,6 +28,7 @@ export default {
   crc1,
   crc8,
   crc81wire,
+  crc8dvbs2,
   crc16,
   crc16ccitt,
   crc16modbus,

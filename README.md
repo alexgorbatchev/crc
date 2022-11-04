@@ -12,6 +12,7 @@ Functions for calculating Cyclic Redundancy Checks (CRC) values for the Node.js 
   - CRC1 (`crc1`)
   - CRC8 (`crc8`)
   - CRC8 1-Wire (`crc81wire`)
+  - CRC8 DVB-S2 (`crc8dvbs2`)
   - CRC16 (`crc16`)
   - CRC16 CCITT (`crc16ccitt`)
   - CRC16 Modbus (`crc16modbus`)
