@@ -1,14 +1,14 @@
 {
   "name": "crc",
-  "version": "4.1.1",
-  "description": "Module for calculating Cyclic Redundancy Check (CRC) for Node.js and the Browser.",
+  "version": "4.2.0",
+  "description": "Module for calculating Cyclic Redundancy Check (CRC) for Node.js and the browser.",
   "author": {
     "name": "Alex Gorbatchev",
     "url": "https://github.com/alexgorbatchev"
   },
-  "homepage": "https://github.com/alexgorbatchev/node-crc",
-  "bugs": "https://github.com/alexgorbatchev/node-crc/issues",
-  "repository": "alexgorbatchev/node-crc",
+  "homepage": "https://github.com/alexgorbatchev/crc",
+  "bugs": "https://github.com/alexgorbatchev/crc/issues",
+  "repository": "alexgorbatchev/crc",
   "license": "MIT",
   "keywords": [
     "crc",
@@ -22,6 +22,7 @@
     "crc32",
     "crc81wire",
     "crc8",
+    "crc8dvbs2",
     "crcjam"
   ],
   "type": "module",
@@ -133,6 +134,16 @@
       "types": "./mjs/calculators/crc8.d.ts",
       "import": "./mjs/calculators/crc8.js",
       "require": "./cjs-default-unwrap/calculators/crc8.js"
+    },
+    "./crc8dvbs2": {
+      "types": "./mjs/crc8dvbs2.d.ts",
+      "import": "./mjs/crc8dvbs2.js",
+      "require": "./cjs-default-unwrap/crc8dvbs2.js"
+    },
+    "./calculators/crc8dvbs2": {
+      "types": "./mjs/calculators/crc8dvbs2.d.ts",
+      "import": "./mjs/calculators/crc8dvbs2.js",
+      "require": "./cjs-default-unwrap/calculators/crc8dvbs2.js"
     },
     "./crcjam": {
       "types": "./mjs/crcjam.d.ts",
