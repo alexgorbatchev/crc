@@ -6,7 +6,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "inlineSourceMap": false,
-    "module": "nodenext",
+    "module": "NodeNext",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "skipLibCheck": true,
