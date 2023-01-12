@@ -9,6 +9,7 @@ module.exports = {
   crc16kermit: require('./crc16kermit'),
   crc24: require('./crc24'),
   crc32: require('./crc32'),
+  crc32mpeg: require('./crc32mpeg'),
   crcjam: require('./crcjam'),
 };
 
