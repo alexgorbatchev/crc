@@ -42,8 +42,8 @@ if (typeof Int32Array !== 'undefined') {
 
 const crc32mpeg: CRCCalculator<Uint8Array> = (current, previous) => {
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  let crc = previous === 0 ? 0 : ~~previous! ^ -1;
-  
+  let crc = typeof previous !== 'undefined' ? ~~previous : 0xffffffff;
+
   for (let index = 0; index < current.length; index++) {
     crc = (TABLE[((crc >> 24) ^ current[index]) & 0xff] ^ (crc << 8));
   }
