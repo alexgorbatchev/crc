@@ -115,6 +115,16 @@
       "import": "./mjs/calculators/crc32.js",
       "require": "./cjs-default-unwrap/calculators/crc32.js"
     },
+    "./crc32mpeg2": {
+      "types": "./mjs/crc32mpeg2.d.ts",
+      "import": "./mjs/crc32mpeg2.js",
+      "require": "./cjs-default-unwrap/crc32mpeg2.js"
+    },
+    "./calculators/crc32mpeg2": {
+      "types": "./mjs/calculators/crc32mpeg2.d.ts",
+      "import": "./mjs/calculators/crc32mpeg2.js",
+      "require": "./cjs-default-unwrap/calculators/crc32mpeg2.js"
+    },
     "./crc81wire": {
       "types": "./mjs/crc81wire.d.ts",
       "import": "./mjs/crc81wire.js",
