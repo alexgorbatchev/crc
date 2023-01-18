@@ -20,7 +20,7 @@ Functions for calculating Cyclic Redundancy Checks (CRC) values for the Node.js 
   - CRC16 XModem (`crc16xmodem`)
   - CRC24 (`crc24`)
   - CRC32 (`crc32`)
-  - CRC32 MPEG-2 (`crc32mpeg`)
+  - CRC32 MPEG-2 (`crc32mpeg2`)
   - CRCJAM (`crcjam`)
 
 ## Installation
