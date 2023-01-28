@@ -10,6 +10,11 @@
   "peerDependencies": {
     "buffer": ">=6.0.3"
   },
+  "peerDependenciesMeta": {
+    "buffer": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@types/chai": "^4.3.4",
     "@types/mocha": "^10.0.1",
