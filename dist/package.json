@@ -180,5 +180,10 @@
   ],
   "peerDependencies": {
     "buffer": ">=6.0.3"
+  },
+  "peerDependenciesMeta": {
+    "buffer": {
+      "optional": true
+    }
   }
 }

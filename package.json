@@ -7,14 +7,6 @@
     "build": "./scripts/build",
     "benchmark": "./scripts/benchmark"
   },
-  "peerDependencies": {
-    "buffer": ">=6.0.3"
-  },
-  "peerDependenciesMeta": {
-    "buffer": {
-      "optional": true
-    }
-  },
   "devDependencies": {
     "@types/chai": "^4.3.4",
     "@types/mocha": "^10.0.1",
@@ -25,6 +17,7 @@
     "beautify-benchmark": "^0.2.4",
     "benchmark": "^2.1.4",
     "buffer-crc32": "^0.2.13",
+    "buffer": "^6.0.3",
     "chai": "^4.3.7",
     "eslint": "^8.29.0",
     "eslint-config-airbnb-base": "^15.0.0",
